@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 
 // Redux setup
 import { applyMiddleware, compose, configureStore } from "@reduxjs/toolkit";
-import { rootReducer } from "./reducers";
+import { rootReducer } from "./redux/reducers";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 

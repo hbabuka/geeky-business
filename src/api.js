@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 // Base URL
 const BASE_URL = "https://api.rawg.io/api/";
 
