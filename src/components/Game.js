@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { motion } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { loadDetails } from "../redux/actions/detailsAction";
+import { gameDetailsURL, gameScreenshotsURL } from "../api";
 
 const WrapperStyled = styled(motion.div)`
   min-height: 30vh;
@@ -15,9 +18,15 @@ const WrapperStyled = styled(motion.div)`
   }
 `;
 
-export const Game = ({ name, released, image }) => {
+export const Game = ({ name, released, image, id }) => {
+  console.log(gameScreenshotsURL(id));
+  const dispatch = useDispatch();
+  const loadDetailsHandler = () => {
+    dispatch(loadDetails(id));
+  };
+
   return (
-    <WrapperStyled>
+    <WrapperStyled onClick={loadDetailsHandler}>
       <h3>{name}</h3>
       <p>{released}</p>
       <img src={image} alt={name} />

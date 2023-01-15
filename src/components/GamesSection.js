@@ -24,6 +24,7 @@ export const GamesSection = ({ title, gamesData }) => {
             name={game.name}
             released={game.released}
             image={game.background_image}
+            id={game.id}
           />
         ))}
       </GridStyled>
