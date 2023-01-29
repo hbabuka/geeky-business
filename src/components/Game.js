@@ -19,7 +19,6 @@ const WrapperStyled = styled(motion.div)`
 `;
 
 export const Game = ({ name, released, image, id }) => {
-  console.log(gameScreenshotsURL(id));
   const dispatch = useDispatch();
   const loadDetailsHandler = () => {
     dispatch(loadDetails(id));
