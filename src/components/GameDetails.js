@@ -32,11 +32,43 @@ const CardShadow = styled(motion.div)`
 const Details = styled(motion.div)`
   width: 80%;
   border-radius: 1rem;
-  padding: 2rem 20rem;
+  padding: 2rem 5rem;
   background-color: white;
   position: absolute;
   left: 10%;
   color: black;
+`;
+
+const Stats = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const Info = styled(motion.div)`
+  text-align: center;
+`;
+
+const Platforms = styled(motion.div)`
+  display: flex;
+  justify-content: space-evenly;
+
+  img {
+    margin-left: 3rem;
+  }
+`;
+
+const Media = styled(motion.div)`
+  margin-top: 5rem;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+`;
+
+const Description = styled(motion.div)`
+  margin: 5rem 0;
 `;
 
 export const GameDetails = () => {
@@ -45,26 +77,26 @@ export const GameDetails = () => {
   return (
     <CardShadow>
       <Details>
-        <div className="stats">
+        <Stats>
           <div className="rating">
             <h3>{game.name}</h3>
             <p>Rating: {game.rating}</p>
           </div>
-          <div className="info">
+          <Info>
             <h3>Platforms</h3>
-            <div className="platforms">
+            <Platforms>
               {game.platforms?.map((item) => (
                 <h3 key={item.platform.id}>{item.platform.name}</h3>
               ))}
-            </div>
-          </div>
-        </div>
-        <div className="media">
+            </Platforms>
+          </Info>
+        </Stats>
+        <Media>
           <img src={game.background_image} alt="game.name" />
-        </div>
-        <div className="description">
+        </Media>
+        <Description>
           <p>{game.description}</p>
-        </div>
+        </Description>
         <div className="gallery">
           {screenshots.results?.map((screenshot) => (
             <img src={screenshot.image} key={screenshot.id} alt={game.name} />
