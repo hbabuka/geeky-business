@@ -1,6 +1,7 @@
 const initialState = {
-  game: {},
-  screenshots: {},
+  game: { platforms: [] },
+  screenshots: { results: [] },
+  isLoading: true,
 };
 
 export const detailsReducer = (state = initialState, action) => {
@@ -10,6 +11,12 @@ export const detailsReducer = (state = initialState, action) => {
         ...state,
         game: action.payload.game,
         screenshots: action.payload.screenshots,
+        isLoading: false,
+      };
+    case "LOADING_DETAILS":
+      return {
+        ...state,
+        isLoading: true,
       };
     default:
       return { ...state };
