@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components/macro";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CardShadow = styled(motion.div)`
   width: 100%;
@@ -72,6 +74,16 @@ const Description = styled(motion.div)`
 `;
 
 export const GameDetails = () => {
+  const navigate = useNavigate();
+  // Close details modal
+  const closeDetailsModal = (e) => {
+    const element = e.target;
+    if (element.classList.contains("shadow")) {
+      document.body.style.overflow = "auto";
+      navigate("/");
+    }
+  };
+
   const { game, screenshots, isLoading } = useSelector(
     (state) => state.details
   );
@@ -79,7 +91,7 @@ export const GameDetails = () => {
   return (
     <>
       {!isLoading && (
-        <CardShadow>
+        <CardShadow className="shadow" onClick={closeDetailsModal}>
           <Details>
             <Stats>
               <div className="rating">

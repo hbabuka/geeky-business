@@ -12,6 +12,7 @@ const WrapperStyled = styled(motion.div)`
   text-align: center;
   border-radius: 1rem;
   cursor: pointer;
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -23,6 +24,7 @@ const WrapperStyled = styled(motion.div)`
 export const Game = ({ name, released, image, id }) => {
   const dispatch = useDispatch();
   const loadDetailsHandler = () => {
+    document.body.style.overflow = "hidden";
     dispatch(loadDetails(id));
   };
 
