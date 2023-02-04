@@ -23,11 +23,16 @@ export const Home = () => {
     dispatch(loadGames());
   }, [dispatch]);
 
-  const { popular, newGames, upcoming } = useSelector((state) => state.games);
+  const { popular, newGames, upcoming, searched } = useSelector(
+    (state) => state.games
+  );
 
   return (
     <HomeStyled>
       {id && <GameDetails />}
+      {searched.length > 0 && (
+        <GamesSection title="Searched Games" gamesData={searched} />
+      )}
       <GamesSection title="Upcoming Games" gamesData={upcoming} />
       <GamesSection title="Popular Games" gamesData={popular} />
       <GamesSection title="New Games" gamesData={newGames} />

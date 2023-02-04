@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../img/logo.svg";
 import styled from "styled-components/macro";
+import { fetchSearch } from "../redux/actions/gamesAction";
+import { useDispatch } from "react-redux";
 
 const StyledWrapper = styled("div")`
   padding: 3rem 5rem;
@@ -38,16 +40,35 @@ const Logo = styled("div")`
 `;
 
 export const Nav = () => {
+  const dispatch = useDispatch();
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearch = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const submitSearch = (e) => {
+    e.preventDefault();
+    dispatch(fetchSearch(searchInput));
+  };
+
+  const clearSearch = () => {
+    dispatch({ type: "CLEAR_SEARCHED" });
+    setSearchInput("");
+  };
+
   return (
     <StyledWrapper>
-      <Logo>
+      <Logo onClick={clearSearch}>
         <img alt="logo" src={logo} />
         <h1>Geeky Business</h1>
       </Logo>
-      <div className="search">
-        <input type="text" />
-        <button>Search</button>
-      </div>
+      <form className="search">
+        <input type="text" value={searchInput} onChange={handleSearch} />
+        <button type="submit" onClick={submitSearch}>
+          Search
+        </button>
+      </form>
     </StyledWrapper>
   );
 };
