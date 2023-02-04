@@ -12,6 +12,8 @@ import nintendo from "../img/nintendo.svg";
 import playstation from "../img/playstation.svg";
 import steam from "../img/steam.svg";
 import xbox from "../img/xbox.svg";
+import starEmpty from "../img/star-empty.png";
+import starFull from "../img/star-full.png";
 
 const CardShadow = styled(motion.div)`
   width: 100%;
@@ -53,6 +55,12 @@ const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    display: inline;
+  }
 `;
 
 const Info = styled(motion.div)`
@@ -113,6 +121,21 @@ export const GameDetails = () => {
     }
   };
 
+  const renderStars = () => {
+    const stars = [];
+    const rating = Math.floor(game.rating);
+
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars.push(<img alt="star" src={starFull} />);
+      } else {
+        stars.push(<img alt="star" src={starEmpty} />);
+      }
+    }
+
+    return stars;
+  };
+
   return (
     <>
       {!isLoading && (
@@ -122,6 +145,7 @@ export const GameDetails = () => {
               <div className="rating">
                 <h3>{game.name}</h3>
                 <p>Rating: {game.rating}</p>
+                {renderStars()}
               </div>
               <Info>
                 <h3>Platforms</h3>
