@@ -8,7 +8,7 @@ import { GameDetails } from "../components/GameDetails";
 import { useParams } from "react-router-dom";
 
 const HomeStyled = styled("div")`
-  padding: 5rem;
+  padding: 0 5rem 5rem;
 
   h2 {
     margin-block: 5rem;
