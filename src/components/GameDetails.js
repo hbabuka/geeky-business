@@ -5,6 +5,14 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { resizeImage } from "../utils.ts";
 
+// Image imports
+import apple from "../img/apple.svg";
+import gamepad from "../img/gamepad.svg";
+import nintendo from "../img/nintendo.svg";
+import playstation from "../img/playstation.svg";
+import steam from "../img/steam.svg";
+import xbox from "../img/xbox.svg";
+
 const CardShadow = styled(motion.div)`
   width: 100%;
   min-height: 100vh;
@@ -88,6 +96,23 @@ export const GameDetails = () => {
     (state) => state.details
   );
 
+  const resolvePlatformIcons = (platform) => {
+    switch (platform) {
+      case "PlayStation 4":
+        return playstation;
+      case "Xbox One":
+        return xbox;
+      case "PC":
+        return steam;
+      case "Nintento Switch":
+        return nintendo;
+      case "iOS":
+        return apple;
+      default:
+        return gamepad;
+    }
+  };
+
   return (
     <>
       {!isLoading && (
@@ -102,7 +127,11 @@ export const GameDetails = () => {
                 <h3>Platforms</h3>
                 <Platforms>
                   {game.platforms?.map((item) => (
-                    <h3 key={item.platform.id}>{item.platform.name}</h3>
+                    <img
+                      key={item.platform.id}
+                      src={resolvePlatformIcons(item.platform.name)}
+                      alt={item.platform.name}
+                    />
                   ))}
                 </Platforms>
               </Info>
