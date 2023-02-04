@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { motion } from "framer-motion";
-import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { resizeImage } from "../utils.ts";
 
 const CardShadow = styled(motion.div)`
   width: 100%;
@@ -108,7 +108,10 @@ export const GameDetails = () => {
               </Info>
             </Stats>
             <Media>
-              <img src={game.background_image} alt="game.name" />
+              <img
+                src={resizeImage(game.background_image, 1280)}
+                alt="game.name"
+              />
             </Media>
             <Description>
               <p>{game.description}</p>

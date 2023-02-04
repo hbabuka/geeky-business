@@ -3,8 +3,8 @@ import styled from "styled-components/macro";
 import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { loadDetails } from "../redux/actions/detailsAction";
-import { gameDetailsURL, gameScreenshotsURL } from "../api";
 import { Link } from "react-router-dom";
+import { resizeImage } from "../utils.ts";
 
 const WrapperStyled = styled(motion.div)`
   min-height: 30vh;
@@ -33,7 +33,7 @@ export const Game = ({ name, released, image, id }) => {
       <Link to={`/game/${id}`}>
         <h3>{name}</h3>
         <p>{released}</p>
-        <img src={image} alt={name} />
+        <img src={resizeImage(image, 640)} alt={name} />
       </Link>
     </WrapperStyled>
   );
