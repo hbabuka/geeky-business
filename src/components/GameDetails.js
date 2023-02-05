@@ -136,6 +136,10 @@ export const GameDetails = () => {
     return stars;
   };
 
+  function resolveDescriptionMarkup(game) {
+    return { __html: game.description };
+  }
+
   return (
     <>
       {!isLoading && (
@@ -167,7 +171,7 @@ export const GameDetails = () => {
               />
             </Media>
             <Description>
-              <p>{game.description}</p>
+              <div dangerouslySetInnerHTML={resolveDescriptionMarkup(game)} />
             </Description>
             <div className="gallery">
               {screenshots.results?.map((screenshot) => (
