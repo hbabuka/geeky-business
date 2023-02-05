@@ -6,7 +6,6 @@ import { GamesSection } from "../components/GamesSection";
 import styled from "styled-components/macro";
 import { GameDetails } from "../components/GameDetails";
 import { useParams } from "react-router-dom";
-import { Bars3Icon } from "@heroicons/react/24/outline";
 
 const HomeStyled = styled("div")`
   padding: 0 5rem 5rem;
@@ -30,6 +29,10 @@ export const Home = () => {
 
   return (
     <HomeStyled>
+      <div className="px-7 bg-primary-700">LOL</div>
+      <button className="px-7 py-4 text-white duration-150 bg-fuchsia-600 rounded-lg hover:bg-indigo-700 active:shadow-lg">
+        Button
+      </button>
       <button className="px-7 py-4 text-white duration-150 bg-fuchsia-600 rounded-lg hover:bg-indigo-700 active:shadow-lg">
         Button
       </button>

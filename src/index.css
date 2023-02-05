@@ -1,3 +1,40 @@
 @tailwind base;
+
+@layer base {
+  /* Typography styles */
+  h1 {
+    @apply text-5xl leading-none font-semibold;
+  }
+
+  h2 {
+    @apply text-4xl leading-10 font-semibold;
+  }
+
+  h3 {
+    @apply text-3xl leading-9 font-semibold;
+  }
+
+  h4 {
+    @apply text-2xl leading-8 font-semibold;
+  }
+
+  h5 {
+    @apply text-xl leading-7 font-semibold;
+  }
+
+  h6 {
+    @apply text-lg leading-7 font-medium;
+  }
+
+  p {
+    @apply text-base leading-6 font-normal;
+  }
+
+  /* button {
+    @apply text-base leading-6 font-medium tracking-wide;
+  } */
+}
+
 @tailwind components;
+
 @tailwind utilities;
