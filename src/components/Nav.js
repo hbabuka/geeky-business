@@ -1,46 +1,27 @@
-import React, { useEffect, useState } from "react";
-import logo from "../img/logo.svg";
-import styled from "styled-components/macro";
+import React, { useState } from "react";
+import { ReactComponent as Logo } from "../assets/geeky-business-logo.svg";
 import { fetchSearch } from "../redux/actions/gamesAction";
 import { useDispatch } from "react-redux";
+import { navData } from "../constants";
+import { useNavigate } from "react-router-dom";
 
-const StyledWrapper = styled("div")`
-  padding: 3rem 5rem;
-  text-align: center;
+const NavItem = ({ data }) => {
+  const adaptedName = data.name.replaceAll(" Games", "");
 
-  input {
-    width: 30%;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border: none;
-    margin-top: 1rem;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  }
-
-  button {
-    font-size: 1.5rem;
-    border: none;
-    padding: 0.5rem 2rem;
-    cursor: pointer;
-    background-color: #ff7676;
-    color: white;
-  }
-`;
-
-const Logo = styled("div")`
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  cursor: pointer;
-
-  img {
-    height: 2rem;
-    width: 2rem;
-  }
-`;
+  return (
+    <a
+      href={`#${data.id}`}
+      className="px-3 py-2 text-base text-center text-secondary-500 rounded-lg hover:bg-primary-50 hover:text-primary-600 duration-300"
+    >
+      {adaptedName}
+    </a>
+  );
+};
 
 export const Nav = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearch = (e) => {
@@ -58,17 +39,22 @@ export const Nav = () => {
   };
 
   return (
-    <StyledWrapper>
-      <Logo onClick={clearSearch}>
-        <img alt="logo" src={logo} />
-        <h1>Geeky Business</h1>
-      </Logo>
-      <form className="search">
-        <input type="text" value={searchInput} onChange={handleSearch} />
-        <button type="submit" onClick={submitSearch}>
-          Search
-        </button>
-      </form>
-    </StyledWrapper>
+    <>
+      <nav className="bg-white">
+        <div className="container mx-auto max-w-5xl py-8 flex items-center justify-between">
+          <div
+            onClick={() => navigate("/")}
+            className="hover:opacity-70 cursor-pointer duration-300"
+          >
+            <Logo />
+          </div>
+          <div className="flex gap-4">
+            {navData.map((item) => (
+              <NavItem data={item} key={item.id} />
+            ))}
+          </div>
+        </div>
+      </nav>
+    </>
   );
 };

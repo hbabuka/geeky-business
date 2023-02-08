@@ -6,14 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { resizeImage } from "../utils.ts";
 
 // Image imports
-import apple from "../img/apple.svg";
-import gamepad from "../img/gamepad.svg";
-import nintendo from "../img/nintendo.svg";
-import playstation from "../img/playstation.svg";
-import steam from "../img/steam.svg";
-import xbox from "../img/xbox.svg";
-import starEmpty from "../img/star-empty.png";
-import starFull from "../img/star-full.png";
+import apple from "../assets/apple.svg";
+import gamepad from "../assets/gamepad.svg";
+import nintendo from "../assets/nintendo.svg";
+import playstation from "../assets/playstation.svg";
+import steam from "../assets/steam.svg";
+import xbox from "../assets/xbox.svg";
+import starEmpty from "../assets/star-empty.png";
+import starFull from "../assets/star-full.png";
 
 const CardShadow = styled(motion.div)`
   width: 100%;

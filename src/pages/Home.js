@@ -29,21 +29,13 @@ export const Home = () => {
 
   return (
     <HomeStyled>
-      <div className="px-7 bg-primary-700">LOL</div>
-      <button className="px-7 py-4 text-white duration-150 bg-fuchsia-600 rounded-lg hover:bg-indigo-700 active:shadow-lg">
-        Button
-      </button>
-      <button className="px-7 py-4 text-white duration-150 bg-fuchsia-600 rounded-lg hover:bg-indigo-700 active:shadow-lg">
-        Button
-      </button>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       {id && <GameDetails />}
       {searched.length > 0 && (
         <GamesSection title="Searched Games" gamesData={searched} />
       )}
-      <GamesSection title="Upcoming Games" gamesData={upcoming} />
-      <GamesSection title="Popular Games" gamesData={popular} />
-      <GamesSection title="New Games" gamesData={newGames} />
+      <GamesSection id="popular" title="Popular Games" gamesData={popular} />
+      <GamesSection id="upcoming" title="Upcoming Games" gamesData={upcoming} />
+      <GamesSection id="latest" title="Latest Games" gamesData={newGames} />
     </HomeStyled>
   );
 };

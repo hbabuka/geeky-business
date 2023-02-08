@@ -1,4 +1,6 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   /* Typography styles */
@@ -30,11 +32,23 @@
     @apply text-base leading-6 font-normal;
   }
 
-  /* button {
+  button {
     @apply text-base leading-6 font-medium tracking-wide;
-  } */
+  }
+
+  /* General styling */
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-secondary-50;
+  }
+
+  .active-scroll-spy {
+    @apply bg-secondary-200 text-secondary-900;
+  }
 }
 
-@tailwind components;
-
-@tailwind utilities;
+@layer components {
+}

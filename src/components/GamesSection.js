@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import { Game } from "./Game";
 import { motion } from "framer-motion";
 
-const WrapperStyled = styled(motion.div)``;
+const WrapperStyled = styled(motion.section)``;
 
 const GridStyled = styled(motion.div)`
   min-height: 80vh;
@@ -13,9 +13,9 @@ const GridStyled = styled(motion.div)`
   grid-row-gap: 5rem;
 `;
 
-export const GamesSection = ({ title, gamesData }) => {
+export const GamesSection = ({ title, gamesData, id }) => {
   return (
-    <WrapperStyled>
+    <WrapperStyled id={id}>
       <h2>{title}</h2>
       <GridStyled>
         {gamesData.map((game) => (
