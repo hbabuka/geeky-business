@@ -59,9 +59,6 @@ export const Home = () => {
               <hr className="border-secondary-300 last:border-none" />
             </>
           ))}
-        {/* <GamesSection id="popular" title="Popular Games" gamesData={popular} />
-      <GamesSection id="upcoming" title="Upcoming Games" gamesData={upcoming} />
-      <GamesSection id="latest" title="Latest Games" gamesData={latest} /> */}
       </div>
     </main>
   );
