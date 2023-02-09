@@ -46,7 +46,7 @@ export const HeroSection = () => {
               <MagnifyingGlassIcon className="w-6 h-6 text-secondary-300" />
             </div>
             <input
-              type="text"
+              type="search"
               value={value}
               onChange={handleSearch}
               id="search-games"
