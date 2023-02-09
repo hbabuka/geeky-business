@@ -7,12 +7,9 @@ import styled from "styled-components/macro";
 import { GameDetails } from "../components/GameDetails";
 import { useParams } from "react-router-dom";
 import { HeroSection } from "../components/HeroSection";
+import { navData } from "../constants";
 
-const HomeStyled = styled("div")`
-  h2 {
-    margin-block: 5rem;
-  }
-`;
+const HomeStyled = styled("div")``;
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -22,20 +19,50 @@ export const Home = () => {
     dispatch(loadGames());
   }, [dispatch]);
 
-  const { popular, newGames, upcoming, searched } = useSelector(
+  const { popular, latest, upcoming, searched } = useSelector(
     (state) => state.games
   );
 
+  const resolveGamesData = (section) => {
+    switch (section.id) {
+      case "popular":
+        return popular;
+      case "latest":
+        return latest;
+      case "upcoming":
+        return upcoming;
+      case "searched":
+        return searched;
+      default:
+        return {};
+    }
+  };
+
   return (
-    <HomeStyled>
+    <main>
       <HeroSection />
       {id && <GameDetails />}
       {searched.length > 0 && (
         <GamesSection title="Searched Games" gamesData={searched} />
       )}
-      <GamesSection id="popular" title="Popular Games" gamesData={popular} />
+      <div className="flex flex-col gap-16">
+        {navData &&
+          navData.map((section) => (
+            <>
+              <GamesSection
+                id={section.id}
+                title={section.name}
+                icon={section.icon}
+                description={section.description}
+                gamesData={resolveGamesData(section)}
+              />
+              <hr className="border-secondary-300 last:border-none" />
+            </>
+          ))}
+        {/* <GamesSection id="popular" title="Popular Games" gamesData={popular} />
       <GamesSection id="upcoming" title="Upcoming Games" gamesData={upcoming} />
-      <GamesSection id="latest" title="Latest Games" gamesData={newGames} />
-    </HomeStyled>
+      <GamesSection id="latest" title="Latest Games" gamesData={latest} /> */}
+      </div>
+    </main>
   );
 };

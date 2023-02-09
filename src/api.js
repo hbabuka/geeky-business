@@ -37,7 +37,7 @@ const SEARCH_GAMES = `&search=`;
 // Games URL's
 export const popularGamesURL = () => `${GAMES_URL}${POPULAR_GAMES}`;
 export const upcomingGamesURL = () => `${GAMES_URL}${UPCOMING_GAMES}`;
-export const newGamesURL = () => `${GAMES_URL}${NEW_GAMES}`;
+export const latestGamesURL = () => `${GAMES_URL}${NEW_GAMES}`;
 
 // Game details URL's
 export const gameDetailsURL = (game_id) =>

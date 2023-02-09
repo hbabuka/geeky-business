@@ -80,6 +80,8 @@
 }
 
 @layer components {
+  /* Extended style guide */
+
   .body2 {
     @apply text-sm leading-5 font-normal;
   }
@@ -87,6 +89,8 @@
   .caption {
     @apply text-xs leading-4 font-medium;
   }
+
+  /* Components */
 
   button {
     @apply h-12 px-6 rounded-lg focus:ring-4 focus:ring-primary-300 focus:outline-none duration-300;
@@ -114,5 +118,11 @@
 
   .chip-small {
     @apply px-2 py-1 text-xs leading-4 font-medium;
+  }
+
+  /* Specific classes */
+
+  .section-icons svg {
+    @apply text-primary-600;
   }
 }

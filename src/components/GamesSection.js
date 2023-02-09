@@ -1,10 +1,16 @@
 import React from "react";
 import { Game } from "./Game";
 
-export const GamesSection = ({ title, gamesData, id }) => {
+export const GamesSection = ({ id, title, icon, description, gamesData }) => {
   return (
-    <div id={id} className="container mx-auto max-w-5xl">
-      <h2>{title}</h2>
+    <div id={id} className="container mx-auto max-w-5xl flex flex-col gap-8">
+      <div className="flex flex-col gap-2 ">
+        <div className="flex gap-3 items-center section-icons">
+          <div className="w-8 h-8">{icon}</div>
+          <h3>{title}</h3>
+        </div>
+        <p className="text-secondary-500">{description}</p>
+      </div>
       <div className="grid grid-cols-3 gap-8">
         {gamesData.map((game) => (
           <Game

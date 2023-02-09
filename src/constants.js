@@ -2,7 +2,7 @@ import {
   BellAlertIcon,
   HandThumbUpIcon,
   RocketLaunchIcon,
-} from "@heroicons/react/24/solid";
+} from "@heroicons/react/24/outline";
 
 export const navData = [
   {

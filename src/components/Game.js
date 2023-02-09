@@ -1,25 +1,8 @@
 import React from "react";
-import styled from "styled-components/macro";
-import { motion } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { loadDetails } from "../redux/actions/detailsAction";
 import { Link } from "react-router-dom";
 import { resizeImage } from "../utils.ts";
-
-const WrapperStyled = styled(motion.div)`
-  /* min-height: 30vh;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  border-radius: 1rem;
-  cursor: pointer;
-  overflow: hidden; */
-
-  /* img {
-    width: 100%;
-    height: 40vh;
-    object-fit: cover;
-  } */
-`;
 
 export const Game = ({ id, name, released, image, genre }) => {
   const dispatch = useDispatch();
@@ -84,8 +67,6 @@ export const Game = ({ id, name, released, image, genre }) => {
       return true;
     } else return false;
   };
-
-  isNew();
 
   return (
     <Link to={`/game/${id}`}>
