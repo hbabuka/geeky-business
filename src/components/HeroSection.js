@@ -19,8 +19,6 @@ export const HeroSection = () => {
     dispatch(fetchSearch(value));
   };
 
-  console.log(value);
-
   return (
     <div className="bg-gradient-to-b from-primary-50 to-transparent py-36 flex flex-col gap-12">
       <div className="flex flex-col gap-8 items-center container mx-auto max-w-5xl">

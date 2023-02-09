@@ -1,23 +1,11 @@
 import React from "react";
-import styled from "styled-components/macro";
 import { Game } from "./Game";
-import { motion } from "framer-motion";
-
-const WrapperStyled = styled(motion.section)``;
-
-const GridStyled = styled(motion.div)`
-  min-height: 80vh;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  grid-column-gap: 3rem;
-  grid-row-gap: 5rem;
-`;
 
 export const GamesSection = ({ title, gamesData, id }) => {
   return (
-    <WrapperStyled id={id}>
+    <div id={id} className="container mx-auto max-w-5xl">
       <h2>{title}</h2>
-      <GridStyled>
+      <div className="grid grid-cols-3 gap-8">
         {gamesData.map((game) => (
           <Game
             key={game.id}
@@ -25,9 +13,10 @@ export const GamesSection = ({ title, gamesData, id }) => {
             released={game.released}
             image={game.background_image}
             id={game.id}
+            genre={game.genres.length > 0 ? game.genres[0].name : "No genre"}
           />
         ))}
-      </GridStyled>
-    </WrapperStyled>
+      </div>
+    </div>
   );
 };
