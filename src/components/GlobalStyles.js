@@ -1,25 +1,25 @@
 import * as styled from "styled-components";
 
 export const GlobalStyles = styled.createGlobalStyle`
-  * {
+  /* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+  } */
 
   html {
-    &::-webkit-scrollbar {
+    /* &::-webkit-scrollbar {
       width: 0.5rem;
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: darkgrey;
-    }
+    } */
 
-    body {
-      /* font-family: "Montserrat", sans-serif; */
-      width: 100%;
-    }
+    /* body { */
+    /* font-family: "Montserrat", sans-serif; */
+    /* width: 100%;
+    } */
 
     /* h2 {
       font-size: 3rem;
@@ -40,18 +40,18 @@ export const GlobalStyles = styled.createGlobalStyle`
       color: #696969;
     } */
 
-    a {
+    /* a {
       text-decoration: none;
       color: #333;
-    }
+    } */
 
     img {
       display: block;
     }
 
-    input {
+    /* input {
       font-weight: bold;
       font-family: "Montserrat", sans-serif;
-    }
+    } */
   }
 `;

@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  /* General styling */
+  * {
+    @apply antialiased;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-secondary-50 text-secondary-900;
+  }
+
   /* Typography styles */
   h1 {
     @apply text-5xl leading-none font-semibold;
@@ -35,20 +48,14 @@
   button {
     @apply text-base leading-6 font-medium tracking-wide;
   }
-
-  /* General styling */
-  html {
-    @apply scroll-smooth;
-  }
-
-  body {
-    @apply bg-secondary-50;
-  }
-
-  .active-scroll-spy {
-    @apply bg-secondary-200 text-secondary-900;
-  }
 }
 
 @layer components {
+  button {
+    @apply h-12 px-6 rounded-lg focus:ring-4 focus:ring-primary-300 focus:outline-none duration-300;
+  }
+
+  .btn-secondary-contained {
+    @apply bg-secondary-900 text-white hover:bg-secondary-700;
+  }
 }

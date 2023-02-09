@@ -4,10 +4,10 @@ import { fetchSearch } from "../redux/actions/gamesAction";
 import { useDispatch } from "react-redux";
 import { navData } from "../constants";
 import { useNavigate } from "react-router-dom";
+import { appendSearchInputData } from "../redux/actions/searchInputAction";
 
 const NavItem = ({ data }) => {
   const adaptedName = data.name.replaceAll(" Games", "");
-
   return (
     <a
       href={`#${data.id}`}
@@ -19,23 +19,13 @@ const NavItem = ({ data }) => {
 };
 
 export const Nav = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [searchInput, setSearchInput] = useState("");
-
-  const handleSearch = (e) => {
-    setSearchInput(e.target.value);
-  };
-
-  const submitSearch = (e) => {
-    e.preventDefault();
-    dispatch(fetchSearch(searchInput));
-  };
-
-  const clearSearch = () => {
+  const onClickLogo = () => {
+    navigate("/");
     dispatch({ type: "CLEAR_SEARCHED" });
-    setSearchInput("");
+    dispatch(appendSearchInputData(""));
   };
 
   return (
@@ -43,7 +33,7 @@ export const Nav = () => {
       <nav className="bg-white">
         <div className="container mx-auto max-w-5xl py-8 flex items-center justify-between">
           <div
-            onClick={() => navigate("/")}
+            onClick={onClickLogo}
             className="hover:opacity-70 cursor-pointer duration-300"
           >
             <Logo />

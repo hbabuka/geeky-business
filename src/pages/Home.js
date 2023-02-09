@@ -6,10 +6,9 @@ import { GamesSection } from "../components/GamesSection";
 import styled from "styled-components/macro";
 import { GameDetails } from "../components/GameDetails";
 import { useParams } from "react-router-dom";
+import { HeroSection } from "../components/HeroSection";
 
 const HomeStyled = styled("div")`
-  padding: 0 5rem 5rem;
-
   h2 {
     margin-block: 5rem;
   }
@@ -29,6 +28,7 @@ export const Home = () => {
 
   return (
     <HomeStyled>
+      <HeroSection />
       {id && <GameDetails />}
       {searched.length > 0 && (
         <GamesSection title="Searched Games" gamesData={searched} />
