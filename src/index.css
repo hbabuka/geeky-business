@@ -100,6 +100,10 @@
     @apply bg-secondary-900 text-white hover:bg-secondary-700;
   }
 
+  .btn-secondary-outlined {
+    @apply border-secondary-900 border hover:bg-secondary-200;
+  }
+
   .card {
     @apply bg-white rounded-[1.25rem] px-5 py-5 shadow flex flex-col duration-300 border border-white;
   }

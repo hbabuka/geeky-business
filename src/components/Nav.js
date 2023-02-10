@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as Logo } from "../assets/geeky-business-logo.svg";
-import { fetchSearch } from "../redux/actions/gamesAction";
 import { useDispatch } from "react-redux";
 import { navData } from "../constants";
 import { useNavigate } from "react-router-dom";
@@ -39,9 +38,11 @@ export const Nav = () => {
             <Logo />
           </div>
           <div className="flex gap-4">
-            {navData.map((item) => (
-              <NavItem data={item} key={item.id} />
-            ))}
+            {navData
+              .filter((nav) => nav.id !== "searched")
+              .map((item) => (
+                <NavItem data={item} key={item.id} />
+              ))}
           </div>
         </div>
       </nav>
