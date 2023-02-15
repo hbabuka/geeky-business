@@ -10,8 +10,6 @@ import nintendo from "../assets/nintendo.svg";
 import playstation from "../assets/playstation.svg";
 import steam from "../assets/steam.svg";
 import xbox from "../assets/xbox.svg";
-import starEmpty from "../assets/star-empty.png";
-import starFull from "../assets/star-full.png";
 
 export const GameDetails = () => {
   const navigate = useNavigate();
