@@ -2,70 +2,14 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { loadDetails } from "../redux/actions/detailsAction";
 import { Link } from "react-router-dom";
-import { resizeImage } from "../utils.ts";
+import { resizeImage } from "../utils.js";
+import { isNew } from "../utils.js";
 
 export const Game = ({ id, name, released, image, genre }) => {
   const dispatch = useDispatch();
 
   const loadDetailsHandler = () => {
-    document.body.style.overflow = "hidden";
     dispatch(loadDetails(id));
-  };
-
-  const isNew = (gameReleased) => {
-    const currentDate = new Date();
-
-    const getDateOneMonthAgo = () => {
-      const newDate = new Date();
-      const currentMonth = currentDate.getMonth();
-      const currentYear = currentDate.getFullYear();
-
-      let newMonth;
-      let newYear;
-
-      if (currentMonth === 1) {
-        newMonth = 12;
-        newYear = currentYear - 1;
-      } else {
-        newMonth = currentMonth - 1;
-        newYear = currentYear;
-      }
-
-      newDate.setMonth(newMonth);
-      newDate.setFullYear(currentYear);
-
-      return newDate;
-    };
-
-    const getDateOneMonthAfter = () => {
-      const newDate = new Date();
-      const currentMonth = currentDate.getMonth();
-      const currentYear = currentDate.getFullYear();
-
-      let newMonth;
-      let newYear;
-
-      if (currentMonth === 12) {
-        newMonth = 1;
-        newYear = currentYear + 1;
-      } else {
-        newMonth = currentMonth + 1;
-        newYear = currentYear;
-      }
-
-      newDate.setMonth(newMonth);
-      newDate.setFullYear(currentYear);
-
-      return newDate;
-    };
-
-    const oneMonthAgo = getDateOneMonthAgo();
-    const oneMonthAfter = getDateOneMonthAfter();
-    const release = new Date(gameReleased);
-
-    if (release >= oneMonthAgo && release <= oneMonthAfter) {
-      return true;
-    } else return false;
   };
 
   return (

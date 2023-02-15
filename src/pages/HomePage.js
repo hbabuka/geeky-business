@@ -3,14 +3,13 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../redux/actions/gamesAction";
 import { GamesSection } from "../components/GamesSection";
-import { GameDetails } from "../components/GameDetails";
 import { useParams } from "react-router-dom";
 import { HeroSection } from "../components/HeroSection";
 import { navData } from "../constants";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 import { appendSearchInputData } from "../redux/actions/searchInputAction";
 
-export const Home = () => {
+export const HomePage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -47,7 +46,6 @@ export const Home = () => {
   return (
     <main>
       <HeroSection />
-      {id && <GameDetails />}
       <div className="flex flex-col gap-16">
         {searched.length > 0 && (
           <>
