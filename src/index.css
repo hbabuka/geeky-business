@@ -120,8 +120,16 @@
     @apply rounded-full;
   }
 
+  .chip-medium {
+    @apply px-3 h-8 text-sm leading-5 font-normal flex items-center;
+  }
+
   .chip-small {
     @apply px-2 py-1 text-xs leading-4 font-medium;
+  }
+
+  .chip-outlined {
+    @apply border;
   }
 
   /* Specific classes */

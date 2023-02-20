@@ -5,16 +5,14 @@ import { isNew, resizeImage } from "../utils";
 import { StarIcon } from "@heroicons/react/24/solid";
 
 export const GameDetailsIntro = () => {
-  const { game, screenshots, isLoading } = useSelector(
-    (state) => state.details
-  );
+  const { game, isLoading } = useSelector((state) => state.details);
 
   const { popular, latest, upcoming, searched } = useSelector(
     (state) => state.games
   );
 
   const allGames = [...popular, ...latest, ...upcoming, ...searched];
-  const releaseDate = allGames.find((item) => item.id === game.id).released;
+  const releaseDate = allGames.find((item) => item.id === game.id)?.released;
 
   const renderStars = () => {
     const stars = [];
@@ -52,7 +50,11 @@ export const GameDetailsIntro = () => {
               <div className="flex">{renderStars()}</div>
               <h5>{parseFloat(game.rating).toFixed(2)}</h5>
             </div>
-            <p className="text-secondary-500">{`(${game.ratings.length} ratings)`}</p>
+            <p className="text-secondary-500">
+              {game.ratings.length > 0
+                ? `(${game.ratings.length} ratings)`
+                : "No ratings yet"}
+            </p>
           </div>
         </div>
         <img
