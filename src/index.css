@@ -101,7 +101,15 @@
   }
 
   .btn-secondary-outlined {
-    @apply border-secondary-900 border hover:bg-secondary-200;
+    @apply border-secondary-500 border hover:bg-secondary-200;
+  }
+
+  .btn-primary-outlined {
+    @apply border-primary-400 border hover:bg-primary-100 text-primary-600;
+  }
+
+  .btn-outlined-disabled {
+    @apply disabled:text-secondary-300 disabled:border-secondary-200 disabled:hover:bg-transparent;
   }
 
   .card {

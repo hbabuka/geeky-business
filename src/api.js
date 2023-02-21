@@ -44,6 +44,8 @@ export const gameDetailsURL = (game_id) =>
   `${BASE_URL}${LIST_OF_GAMES}/${game_id}${API_KEY}`;
 export const gameScreenshotsURL = (game_id) =>
   `${BASE_URL}${LIST_OF_GAMES}/${game_id}/screenshots${API_KEY}`;
+export const gameMoviesURL = (game_id) =>
+  `${BASE_URL}${LIST_OF_GAMES}/${game_id}/movies${API_KEY}`;
 
 // Searched games
 export const searchGamesURL = (game_name) =>

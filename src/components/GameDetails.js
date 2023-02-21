@@ -11,6 +11,10 @@ import playstation from "../assets/playstation.svg";
 import steam from "../assets/steam.svg";
 import xbox from "../assets/xbox.svg";
 import linux from "../assets/linux.svg";
+import {
+  ArrowTopRightOnSquareIcon,
+  PlayIcon,
+} from "@heroicons/react/24/outline";
 
 export const GameDetails = () => {
   const navigate = useNavigate();
@@ -82,6 +86,21 @@ export const GameDetails = () => {
                 ))}
               </div>
             </div>
+          </div>
+          <div className="py-6 flex gap-6">
+            <button className="btn-secondary-contained inline-flex items-center gap-2">
+              <PlayIcon className="w-6 h-6" />
+              Preview
+            </button>
+            <a href={game.website} target="_blank">
+              <button
+                className="btn-primary-outlined inline-flex items-center gap-2 btn-outlined-disabled"
+                disabled={game.website === ""}
+              >
+                <ArrowTopRightOnSquareIcon className="h-6 w-6" />
+                Visit website
+              </button>
+            </a>
           </div>
 
           <div className="gallery">
