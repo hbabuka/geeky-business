@@ -92,25 +92,29 @@
 
   /* Components */
 
+  /* Buttons */
+
   button {
     @apply h-12 px-6 rounded-lg focus:ring-4 focus:ring-primary-300 focus:outline-none duration-300;
   }
 
   .btn-secondary-contained {
-    @apply bg-secondary-900 text-white hover:bg-secondary-700;
+    @apply bg-secondary-900 text-white hover:bg-secondary-700 disabled:bg-secondary-300;
   }
 
   .btn-secondary-outlined {
-    @apply border-secondary-500 border hover:bg-secondary-200;
+    @apply border-secondary-500 border hover:bg-secondary-200 disabled:text-secondary-300 disabled:border-secondary-200 disabled:hover:bg-transparent;
   }
 
   .btn-primary-outlined {
-    @apply border-primary-400 border hover:bg-primary-100 text-primary-600;
+    @apply border-primary-400 border hover:bg-primary-100 text-primary-600 disabled:text-secondary-300 disabled:border-secondary-200 disabled:hover:bg-transparent;
   }
 
-  .btn-outlined-disabled {
-    @apply disabled:text-secondary-300 disabled:border-secondary-200 disabled:hover:bg-transparent;
+  .icon-btn {
+    @apply px-3;
   }
+
+  /* Cards */
 
   .card {
     @apply bg-white rounded-[1.25rem] px-5 py-5 shadow flex flex-col duration-300 border border-white;
@@ -123,6 +127,8 @@
   .card:hover img {
     @apply scale-110 duration-700;
   }
+
+  /* Chips */
 
   .chip {
     @apply rounded-full;

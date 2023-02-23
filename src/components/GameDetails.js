@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { resizeImage } from "../utils.js";
+import { PreviewModal } from "./PreviewModal.js";
 
 // Image imports
 import apple from "../assets/apple.svg";
@@ -19,7 +20,9 @@ import {
 export const GameDetails = () => {
   const navigate = useNavigate();
 
-  const { game, screenshots, isLoading } = useSelector(
+  const [showPreviewModal, setShowPreviewModal] = useState(false);
+
+  const { game, screenshots, isLoading, movies } = useSelector(
     (state) => state.details
   );
 
@@ -53,6 +56,8 @@ export const GameDetails = () => {
 
   const allGames = [...popular, ...latest, ...upcoming, ...searched];
   const gameInGames = allGames.find((item) => item.id === game.id);
+
+  const trailer = movies.results[0];
 
   return (
     <>
@@ -88,13 +93,17 @@ export const GameDetails = () => {
             </div>
           </div>
           <div className="py-6 flex gap-6">
-            <button className="btn-secondary-contained inline-flex items-center gap-2">
+            <button
+              className="btn-secondary-contained inline-flex items-center gap-2"
+              onClick={() => setShowPreviewModal(true)}
+              disabled={movies.count < 1}
+            >
               <PlayIcon className="w-6 h-6" />
               Preview
             </button>
             <a href={game.website} target="_blank">
               <button
-                className="btn-primary-outlined inline-flex items-center gap-2 btn-outlined-disabled"
+                className="btn-primary-outlined inline-flex items-center gap-2"
                 disabled={game.website === ""}
               >
                 <ArrowTopRightOnSquareIcon className="h-6 w-6" />
@@ -108,6 +117,14 @@ export const GameDetails = () => {
               <img src={screenshot.image} key={screenshot.id} alt={game.name} />
             ))}
           </div>
+
+          {showPreviewModal && (
+            <PreviewModal
+              setOpenModal={setShowPreviewModal}
+              title={trailer.name}
+              source={trailer.data["480"]}
+            />
+          )}
         </div>
       )}
     </>
