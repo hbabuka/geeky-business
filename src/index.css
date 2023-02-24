@@ -80,7 +80,7 @@
 }
 
 /* Styling for screenshots gallery */
-.screenshot-media:hover > .hover-container {
+.hover-container:hover {
   opacity: 1;
 }
 

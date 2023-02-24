@@ -1,9 +1,22 @@
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { GalleryImageModal } from "./GalleryImageModal";
 
 export const GameScreenshots = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleIsOpen = () => {
+    setIsOpen(!isOpen);
+    document.body.style.overflow = "hidden";
+  };
+
+  useEffect(() => {
+    if (isOpen === false) {
+      document.body.style.removeProperty("overflow");
+    }
+  }, [isOpen]);
+
   const { game, screenshots, isLoading } = useSelector(
     (state) => state.details
   );
@@ -17,7 +30,8 @@ export const GameScreenshots = () => {
             <GalleryImageModal
               src={screenshot.image}
               alt={screenshot.id}
-              children
+              isOpen={isOpen}
+              toggleIsopen={toggleIsOpen}
             >
               <div className="relative screenshot-media rounded-[20px] overflow-hidden hover:shadow-lg cursor-pointer">
                 <img
