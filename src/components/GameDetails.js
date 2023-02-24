@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { resizeImage } from "../utils.js";
 import { PreviewModal } from "./PreviewModal.js";
 
 // Image imports
@@ -64,7 +62,7 @@ export const GameDetails = () => {
     !isLoading && (
       <div className="flex flex-col gap-6">
         <div className="flex gap-2">
-          {gameInGames.genres.map((genre, index) => (
+          {gameInGames?.genres.map((genre, index) => (
             <span
               className="chip chip-medium chip-outlined border-primary-400 text-primary-600"
               key={index}

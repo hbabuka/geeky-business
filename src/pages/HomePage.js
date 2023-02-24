@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../redux/actions/gamesAction";
 import { GamesSection } from "../components/GamesSection";
-import { useParams } from "react-router-dom";
 import { HeroSection } from "../components/HeroSection";
 import { navData } from "../constants";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
@@ -11,7 +10,6 @@ import { appendSearchInputData } from "../redux/actions/searchInputAction";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
-  const { id } = useParams();
 
   useEffect(() => {
     dispatch(loadGames());
@@ -65,7 +63,7 @@ export const HomePage = () => {
                 </button>
               }
             />
-            <hr className="border-secondary-300 last:border-none" />
+            <hr className="border-secondary-300 last:hidden" />
           </>
         )}
         {navData &&
@@ -80,7 +78,7 @@ export const HomePage = () => {
                   description={section.description}
                   gamesData={resolveGamesData(section)}
                 />
-                <hr className="border-secondary-300 last:border-none" />
+                <hr className="border-secondary-300 last:hidden" />
               </>
             ))}
       </div>
