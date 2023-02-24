@@ -102,7 +102,7 @@ export const GameDetails = () => {
             <PlayIcon className="w-6 h-6" />
             Preview
           </button>
-          <a href={game.website} target="_blank">
+          <a href={game.website} target="_blank" rel="noreferrer">
             <button
               className="btn-primary-outlined inline-flex items-center gap-2"
               disabled={game.website === ""}
