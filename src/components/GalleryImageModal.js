@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export const GalleryImageModal = ({ children, src, alt }) => {
@@ -6,7 +6,14 @@ export const GalleryImageModal = ({ children, src, alt }) => {
 
   const toggleIsOpen = () => {
     setIsOpen(!isOpen);
+    document.body.style.overflow = "hidden";
   };
+
+  useEffect(() => {
+    if (isOpen === false) {
+      document.body.style.removeProperty("overflow");
+    }
+  }, [isOpen]);
 
   return (
     <div onClick={toggleIsOpen}>
