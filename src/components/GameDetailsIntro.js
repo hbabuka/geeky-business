@@ -22,7 +22,7 @@ export const GameDetailsIntro = () => {
       if (i <= rating) {
         stars.push(<StarIcon className="w-6 h-6 text-warning-400" key={i} />);
       } else {
-        stars.push(<StarIcon className="w-6 h-6 text-secondary-300" ey={i} />);
+        stars.push(<StarIcon className="w-6 h-6 text-secondary-300" key={i} />);
       }
     }
 

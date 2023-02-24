@@ -24,7 +24,7 @@ export const GameScreenshots = () => {
                   src={screenshot.image}
                   key={screenshot.id}
                   alt={game.name}
-                  className="object-cover h-52"
+                  className="object-cover h-52 w-full"
                 />
                 <div className="hover-container opacity-0 z-10 bg-secondary-900 absolute inset-0 duration-300 flex items-center justify-center">
                   <div className="flex items-center gap-1">
