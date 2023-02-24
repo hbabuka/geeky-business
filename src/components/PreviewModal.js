@@ -2,12 +2,19 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
 export const PreviewModal = ({ setOpenModal, title, source }) => {
+  document.body.style.overflow = "hidden";
+
+  const closeModal = () => {
+    setOpenModal(false);
+    document.body.style.removeProperty("overflow");
+  };
+
   return (
     <div className="fixed inset-0 z-10 overflow-y-auto">
       {/* Background backdroop */}
       <div
         className="fixed inset-0 w-full h-full bg-secondary-900 opacity-75 transition-opacity"
-        onClick={() => setOpenModal(false)}
+        onClick={closeModal}
       ></div>
 
       {/* Modal */}
@@ -18,7 +25,7 @@ export const PreviewModal = ({ setOpenModal, title, source }) => {
               <h3>{title}</h3>
               <button
                 className="btn-secondary-outlined icon-btn"
-                onClick={() => setOpenModal(false)}
+                onClick={closeModal}
               >
                 <XMarkIcon className="h-6 w-6" />
               </button>
