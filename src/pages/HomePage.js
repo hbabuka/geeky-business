@@ -70,17 +70,16 @@ export const HomePage = () => {
           navData
             .filter((section) => section.id !== "searched")
             .map((section) => (
-              <>
+              <div key={section.id}>
                 <GamesSection
                   id={section.id}
                   title={section.name}
                   icon={section.icon}
                   description={section.description}
                   gamesData={resolveGamesData(section)}
-                  key={section.id}
                 />
                 <hr className="border-secondary-300 last:hidden" />
-              </>
+              </div>
             ))}
       </div>
     </main>

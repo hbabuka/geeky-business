@@ -80,9 +80,11 @@ export const GameDetails = () => {
             <h6>Available on the following platforms:</h6>
             <div className="flex flex-col divide-y divide-secondary-200 gap-4">
               {game.platforms?.map((item) => (
-                <div className="flex grow items-center gap-4 [&:not(:first-child)]:pt-4">
+                <div
+                  key={item.platform.id}
+                  className="flex grow items-center gap-4 [&:not(:first-child)]:pt-4"
+                >
                   <img
-                    key={item.platform.id}
                     src={resolvePlatformIcons(item.platform.name)}
                     alt={item.platform.name}
                     className="w-5 h-5"

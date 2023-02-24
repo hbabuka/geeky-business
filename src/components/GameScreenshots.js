@@ -10,8 +10,6 @@ export const GameScreenshots = () => {
     (state) => state.details
   );
 
-  console.log("openModal", openModal);
-
   return (
     !isLoading && (
       <div>
