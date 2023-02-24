@@ -77,6 +77,7 @@ export const HomePage = () => {
                   icon={section.icon}
                   description={section.description}
                   gamesData={resolveGamesData(section)}
+                  key={section.id}
                 />
                 <hr className="border-secondary-300 last:hidden" />
               </>

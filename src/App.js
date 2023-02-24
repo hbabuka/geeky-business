@@ -4,6 +4,7 @@ import { GameDetailsPage } from "./pages/GameDetailsPage";
 import { Route, Routes } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import "./index.css";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/game/:id" element={<GameDetailsPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

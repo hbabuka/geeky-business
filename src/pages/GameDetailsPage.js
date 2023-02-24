@@ -17,10 +17,12 @@ export const GameDetailsPage = () => {
   }, [dispatch, id]);
 
   return (
-    <div className="container mx-auto max-w-5xl pt-16 flex flex-col gap-6">
+    <>
       <GameDetailsIntro />
-      <GameDetails />
-      <GameScreenshots />
-    </div>
+      <div className="container mx-auto max-w-5xl flex flex-col gap-6">
+        <GameDetails />
+        <GameScreenshots />
+      </div>
+    </>
   );
 };
