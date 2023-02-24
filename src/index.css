@@ -79,6 +79,11 @@
   }
 }
 
+/* Styling for screenshots gallery */
+.screenshot-media:hover > .hover-container {
+  opacity: 1;
+}
+
 @layer components {
   /* Extended style guide */
 
