@@ -15,7 +15,7 @@ export const HomePage = () => {
     dispatch(loadGames());
   }, [dispatch]);
 
-  const { popular, latest, upcoming, searched } = useSelector(
+  const { popular, latest, upcoming, searched, gamesAreLoading } = useSelector(
     (state) => state.games
   );
 
@@ -42,46 +42,48 @@ export const HomePage = () => {
   };
 
   return (
-    <main>
-      <HeroSection />
-      <div className="flex flex-col gap-16">
-        {searched.length > 0 && (
-          <>
-            <GamesSection
-              id={searchedData.id}
-              title={`${searchedData.name} (${searched.length}):`}
-              description={searchedData.description}
-              icon={searchedData.icon}
-              gamesData={searched}
-              action={
-                <button
-                  className="btn-secondary-outlined inline-flex items-center gap-2"
-                  onClick={onClearSearchResults}
-                >
-                  <ArchiveBoxXMarkIcon className="h-6 w-6" />
-                  Clear
-                </button>
-              }
-            />
-            <hr className="border-secondary-300 last:hidden" />
-          </>
-        )}
-        {navData &&
-          navData
-            .filter((section) => section.id !== "searched")
-            .map((section) => (
-              <div key={section.id}>
-                <GamesSection
-                  id={section.id}
-                  title={section.name}
-                  icon={section.icon}
-                  description={section.description}
-                  gamesData={resolveGamesData(section)}
-                />
-                <hr className="border-secondary-300 last:hidden" />
-              </div>
-            ))}
-      </div>
-    </main>
+    !gamesAreLoading && (
+      <main>
+        <HeroSection />
+        <div className="flex flex-col gap-16">
+          {searched.length > 0 && (
+            <>
+              <GamesSection
+                id={searchedData.id}
+                title={`${searchedData.name} (${searched.length}):`}
+                description={searchedData.description}
+                icon={searchedData.icon}
+                gamesData={searched}
+                action={
+                  <button
+                    className="btn-secondary-outlined inline-flex items-center gap-2"
+                    onClick={onClearSearchResults}
+                  >
+                    <ArchiveBoxXMarkIcon className="h-6 w-6" />
+                    Clear
+                  </button>
+                }
+              />
+              <hr className="border-secondary-300 last:hidden" />
+            </>
+          )}
+          {navData &&
+            navData
+              .filter((section) => section.id !== "searched")
+              .map((section) => (
+                <div key={section.id}>
+                  <GamesSection
+                    id={section.id}
+                    title={section.name}
+                    icon={section.icon}
+                    description={section.description}
+                    gamesData={resolveGamesData(section)}
+                  />
+                  <hr className="border-secondary-300 last:hidden" />
+                </div>
+              ))}
+        </div>
+      </main>
+    )
   );
 };

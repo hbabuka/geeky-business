@@ -1,4 +1,5 @@
 import React from "react";
+import { useHashScroll } from "../utils";
 import { Game } from "./Game";
 
 export const GamesSection = ({
@@ -9,6 +10,8 @@ export const GamesSection = ({
   gamesData,
   action,
 }) => {
+  useHashScroll(id, true);
+
   return (
     <div id={id} className="container mx-auto max-w-5xl flex flex-col gap-8">
       <div className="flex justify-between items-end">

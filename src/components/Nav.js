@@ -9,7 +9,7 @@ const NavItem = ({ data }) => {
   const adaptedName = data.name.replaceAll(" Games", "");
   return (
     <a
-      href={`#${data.id}`}
+      href={`/#${data.id}`}
       className="px-3 py-2 text-base text-center text-secondary-500 rounded-lg hover:bg-primary-50 hover:text-primary-600 duration-300"
     >
       {adaptedName}

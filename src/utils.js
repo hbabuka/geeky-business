@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 // Media resize
 export const resizeImage = (imagePath, size) => {
   const regex = /\'media\/screenshots/;
@@ -65,4 +67,33 @@ export const isNew = (gameReleased) => {
   if (release >= oneMonthAgo && release <= oneMonthAfter) {
     return true;
   } else return false;
+};
+
+export const useHashScroll = (id, async = false, offset = 0) => {
+  useEffect(() => {
+    const { hash } = window.location;
+
+    const scrollToElement = (id) => {
+      const element = document.getElementById(id);
+
+      if (element) {
+        const headerOffset = offset;
+        const elementPosition = element.offsetTop;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    if (hash === `#${id}`) {
+      if (async) {
+        setTimeout(() => scrollToElement(id), 500);
+      } else {
+        scrollToElement(id);
+      }
+    }
+  }, [id, async, offset]);
 };
