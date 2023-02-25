@@ -1,6 +1,6 @@
 import { HomeIcon } from "@heroicons/react/24/outline";
 import React from "react";
-import { useLocation, useParams, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const Breadcrumb = () => {
@@ -25,11 +25,28 @@ export const Breadcrumb = () => {
       return "Upcoming";
     } else if (searched.find((item) => item.name === game.name)) {
       return "Searched";
-    }
+    } else return null;
   };
 
   const onClickBreadcrumb = () => {
     navigate(`/#${findSection().toLowerCase()}`);
+  };
+
+  const MapPath = () => {
+    return path
+      .filter((item) => item !== "")
+      .map(() => (
+        <>
+          <p className="body-2 text-secondary-400">/</p>
+          <p
+            onClick={onClickBreadcrumb}
+            className="body-2 text-secondary-900 cursor-pointer hover:text-primary-600 duration-300"
+          >
+            {findSection()}
+          </p>
+        </>
+      ))
+      .pop();
   };
 
   return (
@@ -40,20 +57,7 @@ export const Breadcrumb = () => {
           onClick={() => navigate("/")}
         />
         <div className="flex gap-3 items-center">
-          {path
-            .filter((item) => item !== "")
-            .map(() => (
-              <>
-                <p className="body-2 text-secondary-400">/</p>
-                <p
-                  onClick={onClickBreadcrumb}
-                  className="body-2 text-secondary-900 cursor-pointer hover:text-primary-600 duration-300"
-                >
-                  {findSection()}
-                </p>
-              </>
-            ))
-            .pop()}
+          {findSection() !== null && <MapPath />}
           <p className="body-2 text-secondary-400">/</p>
           <p className="body-2 text-secondary-400">Game details</p>
         </div>
