@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../redux/actions/gamesAction";
@@ -64,14 +64,14 @@ export const HomePage = () => {
                   </button>
                 }
               />
-              <hr className="border-secondary-300 last:hidden" />
+              <hr className="border-secondary-300" />
             </>
           )}
           {navData &&
             navData
               .filter((section) => section.id !== "searched")
               .map((section) => (
-                <div key={section.id}>
+                <Fragment key={section.id}>
                   <GamesSection
                     id={section.id}
                     title={section.name}
@@ -80,7 +80,7 @@ export const HomePage = () => {
                     gamesData={resolveGamesData(section)}
                   />
                   <hr className="border-secondary-300 last:hidden" />
-                </div>
+                </Fragment>
               ))}
         </div>
       </main>

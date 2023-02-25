@@ -15,7 +15,6 @@ export const Breadcrumb = () => {
   const games = popular || latest || upcoming || searched;
 
   const { game } = useSelector((state) => state.details);
-  const { id } = useParams();
 
   const findSection = () => {
     if (popular.find((item) => item.name === game.name)) {
@@ -29,18 +28,17 @@ export const Breadcrumb = () => {
     }
   };
 
-  // const onClickBreadcrumb = () => {
-  //   if (games) {
-  //     navigate(`/${findSection()}`);
-  //     const element = document.getElementById(findSection());
-  //     element.scrollIntoView();
-  //   }
-  // };
+  const onClickBreadcrumb = () => {
+    navigate(`/#${findSection().toLowerCase()}`);
+  };
 
   return (
     games && (
       <div className="flex gap-3 items-center">
-        <HomeIcon className="w-5 h-5" />
+        <HomeIcon
+          className="w-5 h-5 cursor-pointer hover:text-primary-600 duration-300"
+          onClick={() => navigate("/")}
+        />
         <div className="flex gap-3 items-center">
           {path
             .filter((item) => item !== "")
@@ -48,8 +46,8 @@ export const Breadcrumb = () => {
               <>
                 <p className="body-2 text-secondary-400">/</p>
                 <p
-                  // onClick={onClickBreadcrumb()}
-                  className="body-2 text-secondary-900"
+                  onClick={onClickBreadcrumb}
+                  className="body-2 text-secondary-900 cursor-pointer hover:text-primary-600 duration-300"
                 >
                   {findSection()}
                 </p>
