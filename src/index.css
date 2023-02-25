@@ -13,10 +13,11 @@
   }
 
   body {
-    @apply bg-secondary-50 text-secondary-900;
+    @apply bg-secondary-50 text-secondary-900 h-full;
   }
 
   /* Typography styles */
+
   h1 {
     @apply text-5xl leading-none font-semibold;
   }
