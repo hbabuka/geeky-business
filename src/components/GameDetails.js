@@ -77,7 +77,7 @@ export const GameDetails = () => {
         <div className="flex gap-8">
           <p
             dangerouslySetInnerHTML={resolveDescriptionMarkup(game)}
-            className="text-secondary-600"
+            className="text-secondary-600 grow"
           ></p>
           <div className="bg-white rounded-[1.25rem] px-5 py-5 flex flex-col gap-6 border border-secondary-300 w-60 shrink-0">
             <h6>Available on the following platforms:</h6>
