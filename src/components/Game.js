@@ -4,6 +4,7 @@ import { loadDetails } from "../redux/actions/detailsAction";
 import { Link } from "react-router-dom";
 import { resizeImage } from "../utils.js";
 import { isNew } from "../utils.js";
+import { ImagePlaceholder } from "./ImagePlaceholder";
 
 export const Game = ({ id, name, released, image, genre }) => {
   const dispatch = useDispatch();
@@ -19,11 +20,17 @@ export const Game = ({ id, name, released, image, genre }) => {
         className="card flex flex-col gap-4n hover:shadow-lg hover:border hover:border-primary-400 gap-4"
       >
         <div className="rounded-lg overflow-hidden w-full">
-          <img
-            src={resizeImage(image, 640)}
-            alt={name}
-            className="transform ease-in-out duration-300 h-40 object-cover w-full"
-          />
+          {image !== null ? (
+            <img
+              src={resizeImage(image, 640)}
+              alt={name}
+              className="transform ease-in-out duration-300 h-40 object-cover w-full"
+            />
+          ) : (
+            <div className="h-40">
+              <ImagePlaceholder iconSize={12} />
+            </div>
+          )}
         </div>
         <div className="flex flex-col gap-2">
           <h5 className="text-ellipsis whitespace-nowrap overflow-hidden">

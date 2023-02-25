@@ -60,17 +60,20 @@ export const GameDetails = () => {
 
   return (
     !isLoading && (
-      <div className="flex flex-col gap-6">
-        <div className="flex gap-2">
-          {gameInGames?.genres.map((genre, index) => (
-            <span
-              className="chip chip-medium chip-outlined border-primary-400 text-primary-600"
-              key={index}
-            >
-              {genre.name}
-            </span>
-          ))}
-        </div>
+      <div className="flex flex-col gap-6 pt-6">
+        {gameInGames?.genres.length > 0 && (
+          <div className="flex gap-2">
+            {gameInGames?.genres.map((genre, index) => (
+              <span
+                className="chip chip-medium chip-outlined border-primary-400 text-primary-600"
+                key={index}
+              >
+                {genre.name}
+              </span>
+            ))}
+          </div>
+        )}
+
         <div className="flex gap-8">
           <p
             dangerouslySetInnerHTML={resolveDescriptionMarkup(game)}

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Breadcrumb } from "./Breadcrumb";
 import { isNew, resizeImage } from "../utils";
 import { StarIcon } from "@heroicons/react/24/solid";
+import { ImagePlaceholder } from "./ImagePlaceholder";
 
 export const GameDetailsIntro = () => {
   const { game, isLoading } = useSelector((state) => state.details);
@@ -31,7 +32,7 @@ export const GameDetailsIntro = () => {
 
   return (
     !isLoading && (
-      <div className="bg-gradient-to-b from-primary-50 to-transparent pt-16 pb-6">
+      <div className="bg-gradient-to-b from-primary-50 to-transparent pt-16">
         <div className="container mx-auto max-w-5xl flex flex-col gap-6">
           <Breadcrumb />
           <div className="flex items-end justify-between">
@@ -58,11 +59,17 @@ export const GameDetailsIntro = () => {
               </p>
             </div>
           </div>
-          <img
-            src={resizeImage(game.background_image, 1280)}
-            alt="game.name"
-            className="rounded-[1.25rem]"
-          />
+          {game.background_image !== null ? (
+            <img
+              src={resizeImage(game.background_image, 1280)}
+              alt={game.name}
+              className="rounded-[1.25rem]"
+            />
+          ) : (
+            <div className="h-[31rem] rounded-[1.25rem] overflow-hidden">
+              <ImagePlaceholder iconSize={48} />
+            </div>
+          )}
         </div>
       </div>
     )
