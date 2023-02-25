@@ -7,6 +7,8 @@ import { HeroSection } from "../components/HeroSection";
 import { navData } from "../constants";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 import { appendSearchInputData } from "../redux/actions/searchInputAction";
+import { Footer } from "../components/Footer";
+import { Spinner } from "../components/Spinner";
 
 export const HomePage = () => {
   const dispatch = useDispatch();
@@ -41,8 +43,10 @@ export const HomePage = () => {
     dispatch(appendSearchInputData(""));
   };
 
-  return (
-    !gamesAreLoading && (
+  return gamesAreLoading ? (
+    <Spinner />
+  ) : (
+    <>
       <main>
         <HeroSection />
         <div className="flex flex-col gap-16">
@@ -84,6 +88,7 @@ export const HomePage = () => {
               ))}
         </div>
       </main>
-    )
+      <Footer />
+    </>
   );
 };
