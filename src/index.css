@@ -4,16 +4,22 @@
 
 @layer base {
   /* General styling */
+
   * {
     @apply antialiased;
   }
 
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth h-full;
   }
 
   body {
     @apply bg-secondary-50 text-secondary-900 h-full;
+  }
+
+  div#root,
+  div.App {
+    @apply h-screen;
   }
 
   /* Typography styles */

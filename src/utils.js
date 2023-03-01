@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 
-// Media resize
+/**
+ * Resizes an image with URL
+ *
+ * @param {string} imagePath - The image URL
+ * @param {string} size - The dessired size of the image
+ * @returns the API url with adapted image size
+ */
 export const resizeImage = (imagePath, size) => {
   const regex = /\'media\/screenshots/;
   const image = imagePath?.match(regex)
@@ -13,6 +19,12 @@ export const resizeImage = (imagePath, size) => {
   return image;
 };
 
+/**
+ * Determines if a game is new accoring to the current date.
+ *
+ * @param {Date} gameReleased - The release date of the game
+ * @returns boolean if the game is new or not
+ */
 export const isNew = (gameReleased) => {
   const currentDate = new Date();
 
@@ -69,6 +81,13 @@ export const isNew = (gameReleased) => {
   } else return false;
 };
 
+/**
+ * To be invoked where we want to scrool to a certain part of the page.
+ *
+ * @param {string | number} id - The id of the HTML element
+ * @param {boolean} async -
+ * @param {number} offset - The offset from the top of the screen
+ */
 export const useHashScroll = (id, async = false, offset = 0) => {
   useEffect(() => {
     const { hash } = window.location;

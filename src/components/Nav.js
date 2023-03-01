@@ -29,7 +29,7 @@ export const Nav = () => {
 
   return (
     <>
-      <nav className="bg-white">
+      <nav className="bg-white" id="nav-menu">
         <div className="container mx-auto max-w-5xl py-8 flex items-center justify-between">
           <div
             onClick={onClickLogo}
