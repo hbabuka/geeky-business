@@ -13,8 +13,8 @@ export const GamesSection = ({
   useHashScroll(id, true);
 
   return (
-    <div id={id} className="container mx-auto max-w-5xl flex flex-col gap-8">
-      <div className="flex justify-between items-end">
+    <div id={id} className="layout-container flex flex-col gap-5 sm:gap-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-0">
         <div className="flex flex-col gap-2 ">
           <div className="flex gap-3 items-center section-icons">
             <div className="w-8 h-8">{icon}</div>
@@ -24,7 +24,7 @@ export const GamesSection = ({
         </div>
         {action}
       </div>
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
         {gamesData.map((game) => (
           <Game
             key={game.id}

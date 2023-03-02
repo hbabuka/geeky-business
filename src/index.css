@@ -56,6 +56,12 @@
     @apply text-base leading-6 font-medium tracking-wide;
   }
 
+  /* Layout */
+
+  .layout-container {
+    @apply container mx-auto max-w-5xl px-5 md:px-8 xl:px-0;
+  }
+
   /* Styling of clear button for search type input */
   input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
@@ -162,9 +168,5 @@
 
   .section-icons svg {
     @apply text-primary-600;
-  }
-
-  .layout-container {
-    @apply container mx-auto max-w-5xl px-5 md:px-8 xl:px-0;
   }
 }

@@ -49,7 +49,7 @@ export const HomePage = () => {
     <>
       <main>
         <HeroSection />
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-12 sm:gap-16">
           {searched.length > 0 && (
             <>
               <GamesSection

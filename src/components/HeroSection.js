@@ -20,7 +20,7 @@ export const HeroSection = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-primary-50 to-transparent py-36">
+    <div className="bg-gradient-to-b from-primary-50 to-transparent py-20 sm:py-36">
       <div className="layout-container flex flex-col gap-20 sm:gap-12">
         <div className="flex flex-col gap-16 sm:gap-8 items-center">
           <div className="w-28 h-28 relative">
