@@ -44,6 +44,12 @@
     @apply text-xl leading-7 font-semibold;
   }
 
+  @media not all and (min-width: 1024px) {
+    .h5-xs {
+      @apply text-lg leading-7 font-medium;
+    }
+  }
+
   h6 {
     @apply text-lg leading-7 font-medium;
   }

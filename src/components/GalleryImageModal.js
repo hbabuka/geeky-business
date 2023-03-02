@@ -23,18 +23,28 @@ export const GalleryImageModal = ({ children, src, alt, setOpenModal }) => {
         <div className="fixed inset-0 z-10 overflow-y-auto">
           {/* Background backdroop */}
           <div className="fixed inset-0 w-full h-full bg-secondary-900 opacity-90 transition-opacity"></div>
+          <button
+            className="btn-secondary-outlined icon-btn absolute top-5 right-5 lg:top-8 lg:right-8 bg-white"
+            onClick={toggleIsOpen}
+          >
+            <XMarkIcon className="h-6 w-6" />
+          </button>
 
-          <div className="flex items-center min-h-screen">
-            <div className="relative mx-auto my-auto bg-white rounded-3xl shadow-2xl overflow-hidden">
-              <button
-                className="btn-secondary-outlined icon-btn absolute top-8 right-8 bg-white"
-                onClick={toggleIsOpen}
-              >
-                <XMarkIcon className="h-6 w-6" />
-              </button>
-              <img src={src} alt={alt} className="max-w-5xl" />
+          {/* Modal content */}
+          <div className="flex items-center min-h-screen mx-5 md:mx-0">
+            <div className="relative mx-auto my-auto bg-white rounded-none lg:rounded-3xl shadow-2xl overflow-auto lg:overflow-hidden">
+              <img
+                src={src}
+                alt={alt}
+                className="max-w-3xl md:max-w-full lg:max-w-5xl border-2 border-white"
+              />
             </div>
           </div>
+
+          {/* Scroll message shown only on smaller devices */}
+          <p className="caption md:hidden absolute text-white bottom-10 mx-auto w-full text-center">
+            ← Scroll horizontally inside to view the full the image →
+          </p>
         </div>
       ) : null}
     </div>

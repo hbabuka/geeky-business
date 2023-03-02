@@ -11,7 +11,7 @@ export const GameScreenshots = () => {
   return (
     <div>
       <h4 className="mb-6">Screenshots</h4>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {screenshots.results.length > 0 ? (
           screenshots.results?.map((screenshot) => (
             <GalleryImageModal

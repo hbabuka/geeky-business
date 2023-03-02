@@ -21,9 +21,19 @@ export const GameDetailsIntro = () => {
 
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
-        stars.push(<StarIcon className="w-6 h-6 text-warning-400" key={i} />);
+        stars.push(
+          <StarIcon
+            className="w-5 h-5 sm:w-6 sm:h-6 text-warning-400"
+            key={i}
+          />
+        );
       } else {
-        stars.push(<StarIcon className="w-6 h-6 text-secondary-300" key={i} />);
+        stars.push(
+          <StarIcon
+            className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-300"
+            key={i}
+          />
+        );
       }
     }
 
@@ -31,14 +41,16 @@ export const GameDetailsIntro = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-primary-50 to-transparent pt-16">
-      <div className="container mx-auto max-w-5xl flex flex-col gap-6">
+    <div className="bg-gradient-to-b from-primary-50 to-transparent pt-8 lg:pt-16">
+      <div className="layout-container flex flex-col gap-6">
         <Breadcrumb />
-        <div className="flex items-end justify-between">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 lg:gap-0">
           <div>
             <h2>{game.name}</h2>
             <div className="flex items-center gap-3">
-              <p className="text-secondary-500">Released: {releaseDate}</p>
+              <p className="text-secondary-500 mt-2 md:mt-0">
+                Released: {releaseDate}
+              </p>
               {isNew(releaseDate) && (
                 <span className="chip chip-small bg-success-50 text-success-600">
                   New
@@ -46,10 +58,10 @@ export const GameDetailsIntro = () => {
               )}
             </div>
           </div>
-          <div className="flex flex-col gap-1 items-end">
-            <div className="flex gap-3 items-center">
+          <div className="flex gap-2 lg:flex-col lg:gap-1 items-center lg:items-end">
+            <div className="flex gap-2 lg:gap-3 items-center flex-row-reverse lg:flex-row">
               <div className="flex">{renderStars()}</div>
-              <h5>{parseFloat(game.rating).toFixed(2)}</h5>
+              <h5 className="h5-xs">{parseFloat(game.rating).toFixed(2)}</h5>
             </div>
             <p className="text-secondary-500">
               {game.ratings.length > 0

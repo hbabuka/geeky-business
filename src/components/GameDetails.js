@@ -73,12 +73,12 @@ export const GameDetails = () => {
         </div>
       )}
 
-      <div className="flex gap-8">
+      <div className="flex gap-4 sm:gap-8 flex-col sm:flex-row">
         <p
           dangerouslySetInnerHTML={resolveDescriptionMarkup(game)}
           className="text-secondary-600 grow"
         ></p>
-        <div className="bg-white rounded-[1.25rem] px-5 py-5 flex flex-col gap-6 border border-secondary-300 w-60 shrink-0">
+        <div className="bg-white rounded-[1.25rem] px-5 py-5 flex flex-col gap-6 border border-secondary-300 sm:w-60 shrink-0">
           <h6>Available on the following platforms:</h6>
           <div className="flex flex-col divide-y divide-secondary-200 gap-4">
             {game.platforms?.map((item) => (

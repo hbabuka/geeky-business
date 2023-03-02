@@ -25,7 +25,7 @@ export const GameDetailsPage = () => {
   ) : (
     <>
       <GameDetailsIntro />
-      <div className="container mx-auto max-w-5xl flex flex-col gap-6">
+      <div className="layout-container flex flex-col gap-6">
         <GameDetails />
         <GameScreenshots />
       </div>
