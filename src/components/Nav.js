@@ -90,8 +90,10 @@ export const Nav = () => {
                 <NavItem data={item} key={item.id} />
               ))}
             <div className="md:hidden">
-              <NavItem data={navData[1]} />
-              <NavItem data={navData[3]} />
+              <NavItem data={navData.find((obj) => obj.id === "top-indie")} />
+              <NavItem
+                data={navData.find((obj) => obj.id === "top-multiplayer")}
+              />
             </div>
 
             {/* Dropdown Nav item and Menu */}

@@ -46,7 +46,7 @@ export const HomePage = () => {
     }
   };
 
-  const searchedData = navData[3];
+  const searchedData = navData.find((obj) => obj.id === "searched");
 
   const onClearSearchResults = () => {
     dispatch({ type: "CLEAR_SEARCHED" });
