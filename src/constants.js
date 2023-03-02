@@ -4,6 +4,7 @@ import {
   HandThumbUpIcon,
   RocketLaunchIcon,
   StarIcon,
+  UsersIcon,
 } from "@heroicons/react/24/outline";
 
 // Data constants
@@ -16,6 +17,12 @@ export const navData = [
     icon: <HandThumbUpIcon />,
   },
   {
+    id: "top-indie",
+    name: "Top Indie Games",
+    description: "A preview of the top rated indie games of all times.",
+    icon: <StarIcon />,
+  },
+  {
     id: "upcoming",
     name: "Upcoming Games",
     description:
@@ -23,10 +30,10 @@ export const navData = [
     icon: <RocketLaunchIcon />,
   },
   {
-    id: "top-indie",
-    name: "Top Indie Games",
-    description: "A preview of the top rated indie games of all times.",
-    icon: <StarIcon />,
+    id: "top-multiplayer",
+    name: "Top Multiplayer Games",
+    description: "The more, the merrier. Best multiplayer games of all time.",
+    icon: <UsersIcon />,
   },
   {
     id: "latest",

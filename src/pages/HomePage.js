@@ -21,7 +21,8 @@ export const HomePage = () => {
     popular,
     latest,
     upcoming,
-    topRatedIndie,
+    topIndie,
+    topMultiplayer,
     searched,
     gamesAreLoading,
   } = useSelector((state) => state.games);
@@ -35,7 +36,9 @@ export const HomePage = () => {
       case "upcoming":
         return upcoming;
       case "top-indie":
-        return topRatedIndie;
+        return topIndie;
+      case "top-multiplayer":
+        return topMultiplayer;
       case "searched":
         return searched;
       default:
@@ -89,7 +92,10 @@ export const HomePage = () => {
                     icon={section.icon}
                     description={section.description}
                     gamesData={resolveGamesData(section)}
-                    topRated={section.id === "top-indie"}
+                    topRated={
+                      section.id === "top-indie" ||
+                      section.id === "top-multiplayer"
+                    }
                   />
                   <hr className="border-secondary-300 last:hidden" />
                 </Fragment>

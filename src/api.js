@@ -33,13 +33,15 @@ const POPULAR_GAMES = `&dates=${lastYear},${currentDate}&ordering=-rating&page_s
 const UPCOMING_GAMES = `&dates=${currentDate},${nextYear}&ordering=-added&page_size=12`;
 const NEW_GAMES = `&dates=${lastYear},${currentDate}&ordering=-released&page_size=12`;
 const SEARCH_GAMES = `&search=`;
-const TOP_RATED_INDIE = `&genres=indie&ordering=-rating&page_size=6`;
+const TOP_INDIE = `&genres=indie&ordering=-rating&page_size=6`;
+const TOP_MULTIPLAYER = `&tags=multiplayer&ordering=-rating&page_size=3`;
 
 // Games URL's
 export const popularGamesURL = () => `${GAMES_URL}${POPULAR_GAMES}`;
 export const upcomingGamesURL = () => `${GAMES_URL}${UPCOMING_GAMES}`;
 export const latestGamesURL = () => `${GAMES_URL}${NEW_GAMES}`;
-export const topRatedIndieGamesURL = () => `${GAMES_URL}${TOP_RATED_INDIE}`;
+export const topIndieGamesURL = () => `${GAMES_URL}${TOP_INDIE}`;
+export const topMultiplayerGamesURL = () => `${GAMES_URL}${TOP_MULTIPLAYER}`;
 
 // Game details URL's
 export const gameDetailsURL = (game_id) =>
