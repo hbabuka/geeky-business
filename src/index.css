@@ -163,4 +163,8 @@
   .section-icons svg {
     @apply text-primary-600;
   }
+
+  .layout-container {
+    @apply container mx-auto max-w-5xl px-4 md:px-8 xl:px-0;
+  }
 }

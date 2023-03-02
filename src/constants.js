@@ -5,6 +5,8 @@ import {
   RocketLaunchIcon,
 } from "@heroicons/react/24/outline";
 
+// Data constants
+
 export const navData = [
   {
     id: "popular",
