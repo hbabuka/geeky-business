@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { GalleryImageModal } from "./GalleryImageModal";
 
-export const GameScreenshots = () => {
-  const [openModal, setOpenModal] = useState(false);
+export const GameScreenshots = ({ openPreviewModal }) => {
+  const [openImageModal, setOpenImageModal] = useState(false);
 
   const { game, screenshots } = useSelector((state) => state.details);
 
@@ -17,7 +17,7 @@ export const GameScreenshots = () => {
             <GalleryImageModal
               src={screenshot.image}
               alt={screenshot.id}
-              setOpenModal={setOpenModal}
+              setOpenModal={setOpenImageModal}
               key={screenshot.id}
             >
               <div className="relative screenshot-media rounded-[20px] overflow-hidden hover:shadow-lg cursor-pointer">
@@ -27,7 +27,7 @@ export const GameScreenshots = () => {
                   alt={game.name}
                   className="object-cover h-52 w-full"
                 />
-                {!openModal && (
+                {!openImageModal && !openPreviewModal && (
                   <div className="hover-container opacity-0 z-10 bg-secondary-900 absolute inset-0 duration-300 flex items-center justify-center">
                     <div className="flex items-center gap-1">
                       <p className="text-white">Open</p>

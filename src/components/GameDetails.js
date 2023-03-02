@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { PreviewModal } from "./PreviewModal.js";
 
@@ -15,9 +15,7 @@ import {
   PlayIcon,
 } from "@heroicons/react/24/outline";
 
-export const GameDetails = () => {
-  const [showPreviewModal, setShowPreviewModal] = useState(false);
-
+export const GameDetails = ({ showPreviewModal, setShowPreviewModal }) => {
   const { game, movies } = useSelector((state) => state.details);
 
   const resolvePlatformIcons = (platform) => {

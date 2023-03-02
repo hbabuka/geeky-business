@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { GameDetails } from "../components/GameDetails";
 import { GameDetailsIntro } from "../components/GameDetailsIntro";
 import { GameScreenshots } from "../components/GameScreenshots";
@@ -11,6 +11,7 @@ import { Spinner } from "../components/Spinner";
 
 export const GameDetailsPage = () => {
   const { isLoading } = useSelector((state) => state.details);
+  const [openPreviewModal, setOpenPreviewModal] = useState(false);
 
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -26,8 +27,11 @@ export const GameDetailsPage = () => {
     <>
       <GameDetailsIntro />
       <div className="layout-container flex flex-col gap-6">
-        <GameDetails />
-        <GameScreenshots />
+        <GameDetails
+          showPreviewModal={openPreviewModal}
+          setShowPreviewModal={setOpenPreviewModal}
+        />
+        <GameScreenshots openPreviewModal={openPreviewModal} />
       </div>
       <Footer />
     </>
