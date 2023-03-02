@@ -165,6 +165,6 @@
   }
 
   .layout-container {
-    @apply container mx-auto max-w-5xl px-4 md:px-8 xl:px-0;
+    @apply container mx-auto max-w-5xl px-5 md:px-8 xl:px-0;
   }
 }

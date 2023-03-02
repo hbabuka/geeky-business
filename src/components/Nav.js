@@ -57,7 +57,7 @@ export const Nav = () => {
             )}
           </button>
           <div
-            className="hidden flex-[1_1_100%] sm:flex-1 sm:flex gap-4 justify-end pt-4"
+            className="hidden flex-[1_1_100%] sm:flex-1 sm:flex gap-4 justify-end pt-4 sm:pt-0"
             id="mobile-menu"
           >
             {navData
