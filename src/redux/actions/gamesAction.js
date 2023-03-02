@@ -4,6 +4,7 @@ import {
   upcomingGamesURL,
   latestGamesURL,
   searchGamesURL,
+  topRatedIndieGamesURL,
 } from "../../api";
 
 // Action creator
@@ -13,6 +14,7 @@ export const loadGames = () => async (dispatch) => {
   const popularGamesData = await axios.get(popularGamesURL());
   const upcomingGamesData = await axios.get(upcomingGamesURL());
   const latestGamesData = await axios.get(latestGamesURL());
+  const topRatedIndieGamesData = await axios.get(topRatedIndieGamesURL());
 
   dispatch({
     type: "FETCH_GAMES",
@@ -20,6 +22,7 @@ export const loadGames = () => async (dispatch) => {
       popular: popularGamesData.data.results,
       upcoming: upcomingGamesData.data.results,
       new: latestGamesData.data.results,
+      topRatedIndie: topRatedIndieGamesData.data.results,
     },
   });
 };

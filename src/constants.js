@@ -3,6 +3,7 @@ import {
   DocumentMagnifyingGlassIcon,
   HandThumbUpIcon,
   RocketLaunchIcon,
+  StarIcon,
 } from "@heroicons/react/24/outline";
 
 // Data constants
@@ -20,6 +21,12 @@ export const navData = [
     description:
       "Video games that are going to be added in the following year.",
     icon: <RocketLaunchIcon />,
+  },
+  {
+    id: "top-indie",
+    name: "Top Indie Games",
+    description: "A preview of the top rated indie games of all times.",
+    icon: <StarIcon />,
   },
   {
     id: "latest",

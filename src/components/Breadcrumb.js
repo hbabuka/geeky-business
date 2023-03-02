@@ -8,7 +8,7 @@ export const Breadcrumb = () => {
   const path = location.pathname.split("/");
   const navigate = useNavigate();
 
-  const { popular, latest, upcoming, searched } = useSelector(
+  const { popular, latest, upcoming, searched, topRatedIndie } = useSelector(
     (state) => state.games
   );
 
@@ -23,13 +23,15 @@ export const Breadcrumb = () => {
       return "Latest";
     } else if (upcoming.find((item) => item.name === game.name)) {
       return "Upcoming";
+    } else if (topRatedIndie.find((item) => item.name === game.name)) {
+      return "Top Indie";
     } else if (searched.find((item) => item.name === game.name)) {
       return "Searched";
     } else return null;
   };
 
   const onClickBreadcrumb = () => {
-    navigate(`/#${findSection().toLowerCase()}`);
+    navigate(`/#${findSection().replace(" ", "-").toLowerCase()}`);
   };
 
   const MapPath = () => {

@@ -36,10 +36,10 @@ export const Game = ({ id, name, released, image, genre }) => {
           <h5 className="text-ellipsis whitespace-nowrap overflow-hidden">
             {name}
           </h5>
-          <div className="flex justify-between items-end">
-            <div className="flex gap-1">
+          <div className="flex justify-between items-end min-w-0 gap-1">
+            <div className="flex gap-1 min-w-0">
               <span
-                className={`chip chip-small ${
+                className={`chip chip-small overflow-hidden text-ellipsis whitespace-nowrap ${
                   genre === "No genre"
                     ? "bg-secondary-100 text-secondary-600"
                     : "bg-primary-50 text-primary-600"
@@ -53,7 +53,9 @@ export const Game = ({ id, name, released, image, genre }) => {
                 </span>
               )}
             </div>
-            <p className="body2 text-secondary-400">{released}</p>
+            <p className="body2 text-secondary-400 overflow-hidden text-ellipsis whitespace-nowrap">
+              {released !== null ? released : "Release date not available"}
+            </p>
           </div>
         </div>
       </div>

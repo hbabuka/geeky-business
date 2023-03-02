@@ -17,9 +17,14 @@ export const HomePage = () => {
     dispatch(loadGames());
   }, [dispatch]);
 
-  const { popular, latest, upcoming, searched, gamesAreLoading } = useSelector(
-    (state) => state.games
-  );
+  const {
+    popular,
+    latest,
+    upcoming,
+    topRatedIndie,
+    searched,
+    gamesAreLoading,
+  } = useSelector((state) => state.games);
 
   const resolveGamesData = (section) => {
     switch (section.id) {
@@ -29,6 +34,8 @@ export const HomePage = () => {
         return latest;
       case "upcoming":
         return upcoming;
+      case "top-indie":
+        return topRatedIndie;
       case "searched":
         return searched;
       default:
@@ -82,6 +89,7 @@ export const HomePage = () => {
                     icon={section.icon}
                     description={section.description}
                     gamesData={resolveGamesData(section)}
+                    topRated={section.id === "top-indie"}
                   />
                   <hr className="border-secondary-300 last:hidden" />
                 </Fragment>

@@ -64,8 +64,8 @@ export const GameDetailsIntro = () => {
               <h5 className="h5-xs">{parseFloat(game.rating).toFixed(2)}</h5>
             </div>
             <p className="text-secondary-500">
-              {game.ratings.length > 0
-                ? `(${game.ratings.length} ratings)`
+              {game.ratings_count > 0
+                ? `(${game.ratings_count} ratings)`
                 : "No ratings yet"}
             </p>
           </div>

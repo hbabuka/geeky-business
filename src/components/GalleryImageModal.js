@@ -36,7 +36,7 @@ export const GalleryImageModal = ({ children, src, alt, setOpenModal }) => {
               <img
                 src={src}
                 alt={alt}
-                className="max-w-3xl md:max-w-full lg:max-w-5xl border-2 border-white"
+                className="max-w-3xl md:max-w-full lg:max-w-5xl border-2 border-white md:border-none"
               />
             </div>
           </div>
