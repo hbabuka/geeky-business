@@ -1,19 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { PreviewModal } from "./PreviewModal.js";
-
-// Image imports
-import apple from "../assets/apple.svg";
-import gamepad from "../assets/gamepad.svg";
-import nintendo from "../assets/nintendo.svg";
-import playstation from "../assets/playstation.svg";
-import steam from "../assets/steam.svg";
-import xbox from "../assets/xbox.svg";
-import linux from "../assets/linux.svg";
 import {
   ArrowTopRightOnSquareIcon,
   PlayIcon,
 } from "@heroicons/react/24/outline";
+
+// Image imports
+import { ReactComponent as Apple } from "../assets/apple.svg";
+import { ReactComponent as Gamepad } from "../assets/gamepad.svg";
+import { ReactComponent as Nintendo } from "../assets/nintendo.svg";
+import { ReactComponent as Playstation } from "../assets/playstation.svg";
+import { ReactComponent as Steam } from "../assets/steam.svg";
+import { ReactComponent as Xbox } from "../assets/xbox.svg";
+import { ReactComponent as Linux } from "../assets/linux.svg";
 
 export const GameDetails = ({ showPreviewModal, setShowPreviewModal }) => {
   const { game, movies } = useSelector((state) => state.details);
@@ -24,18 +24,18 @@ export const GameDetails = ({ showPreviewModal, setShowPreviewModal }) => {
     };
 
     if (platformIncludes("playstation")) {
-      return playstation;
+      return <Playstation className="w-5 h-5" />;
     } else if (platformIncludes("xbox")) {
-      return xbox;
+      return <Xbox className="w-5 h-5" />;
     } else if (platformIncludes("pc")) {
-      return steam;
+      return <Steam className="w-5 h-5" />;
     } else if (platformIncludes("nintendo")) {
-      return nintendo;
+      return <Nintendo className="w-5 h-5" />;
     } else if (platformIncludes("ios")) {
-      return apple;
+      return <Apple className="w-5 h-5" />;
     } else if (platformIncludes("linux")) {
-      return linux;
-    } else return gamepad;
+      return <Linux className="w-5 h-5" />;
+    } else return <Gamepad className="w-5 h-5" />;
   };
 
   function resolveDescriptionMarkup(game) {
@@ -84,11 +84,7 @@ export const GameDetails = ({ showPreviewModal, setShowPreviewModal }) => {
                 key={item.platform.id}
                 className="flex grow items-center gap-4 [&:not(:first-child)]:pt-4"
               >
-                <img
-                  src={resolvePlatformIcons(item.platform.name)}
-                  alt={item.platform.name}
-                  className="w-5 h-5"
-                />
+                {resolvePlatformIcons(item.platform.name)}
                 <p className="text-secondary-600">{item.platform.name}</p>
               </div>
             ))}
