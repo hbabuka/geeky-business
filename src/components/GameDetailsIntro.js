@@ -45,11 +45,11 @@ export const GameDetailsIntro = () => {
       <div className="layout-container flex flex-col gap-6">
         <Breadcrumb />
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 lg:gap-0">
-          <div>
+          <div className="flex flex-col gap-2 md:gap-1">
             <h2>{game.name}</h2>
             <div className="flex items-center gap-3">
               <p className="text-secondary-500 mt-2 md:mt-0">
-                Released: {releaseDate}
+                Released: {releaseDate ?? "Not available"}
               </p>
               {isNew(releaseDate) && (
                 <span className="chip chip-small bg-success-50 text-success-600">
