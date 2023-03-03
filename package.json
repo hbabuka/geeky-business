@@ -1,7 +1,7 @@
 {
   "name": "geeky-business",
   "version": "0.1.0",
-  "homepage": "https://hbabuka.github.io/geeky-business",
+  "homepage": "https://hbabuka.github.io/geeky-business/",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.9",
