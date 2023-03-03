@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/geeky-business/static/css/main.80822428.css",
-    "main.js": "/geeky-business/static/js/main.2fc79117.js",
-    "static/js/787.4b6c1a29.chunk.js": "/geeky-business/static/js/787.4b6c1a29.chunk.js",
-    "static/media/geeky-business-logo.svg": "/geeky-business/static/media/geeky-business-logo.f3107e8dc2e0955a9df95b973c39a94c.svg",
-    "static/media/hero-logo-icon-color.svg": "/geeky-business/static/media/hero-logo-icon-color.ded6db67c3eca933dfb1ce284df27966.svg",
-    "static/media/logo-spinner-secondary.svg": "/geeky-business/static/media/logo-spinner-secondary.1c7a9bfd39eb448393690cd94f696bf7.svg",
-    "static/media/linux.svg": "/geeky-business/static/media/linux.bc05abf729793cfd9717c70c47936e4a.svg",
-    "static/media/steam.svg": "/geeky-business/static/media/steam.f61f2ad983d83550bd125c39fa36ad01.svg",
-    "static/media/xbox.svg": "/geeky-business/static/media/xbox.e8450bf04f396699d2fa87443565deb4.svg",
-    "static/media/gamepad.svg": "/geeky-business/static/media/gamepad.9dff43f8ca0d98b17e4524631619e30d.svg",
-    "static/media/playstation.svg": "/geeky-business/static/media/playstation.b420bc58e9d554f16cf9bddd11dba192.svg",
-    "static/media/nintendo.svg": "/geeky-business/static/media/nintendo.bfb6adcf6d31e4694febb12ecada7179.svg",
-    "index.html": "/geeky-business/index.html",
-    "static/media/apple.svg": "/geeky-business/static/media/apple.5a32238b688dbb5f6d5f59074537f152.svg",
-    "main.80822428.css.map": "/geeky-business/static/css/main.80822428.css.map",
-    "main.2fc79117.js.map": "/geeky-business/static/js/main.2fc79117.js.map",
-    "787.4b6c1a29.chunk.js.map": "/geeky-business/static/js/787.4b6c1a29.chunk.js.map"
+    "main.css": "./static/css/main.80822428.css",
+    "main.js": "./static/js/main.35509439.js",
+    "static/js/787.4b6c1a29.chunk.js": "./static/js/787.4b6c1a29.chunk.js",
+    "static/media/geeky-business-logo.svg": "./static/media/geeky-business-logo.f3107e8dc2e0955a9df95b973c39a94c.svg",
+    "static/media/hero-logo-icon-color.svg": "./static/media/hero-logo-icon-color.ded6db67c3eca933dfb1ce284df27966.svg",
+    "static/media/logo-spinner-secondary.svg": "./static/media/logo-spinner-secondary.1c7a9bfd39eb448393690cd94f696bf7.svg",
+    "static/media/linux.svg": "./static/media/linux.bc05abf729793cfd9717c70c47936e4a.svg",
+    "static/media/steam.svg": "./static/media/steam.f61f2ad983d83550bd125c39fa36ad01.svg",
+    "static/media/xbox.svg": "./static/media/xbox.e8450bf04f396699d2fa87443565deb4.svg",
+    "static/media/gamepad.svg": "./static/media/gamepad.9dff43f8ca0d98b17e4524631619e30d.svg",
+    "static/media/playstation.svg": "./static/media/playstation.b420bc58e9d554f16cf9bddd11dba192.svg",
+    "static/media/nintendo.svg": "./static/media/nintendo.bfb6adcf6d31e4694febb12ecada7179.svg",
+    "index.html": "./index.html",
+    "static/media/apple.svg": "./static/media/apple.5a32238b688dbb5f6d5f59074537f152.svg",
+    "main.80822428.css.map": "./static/css/main.80822428.css.map",
+    "main.35509439.js.map": "./static/js/main.35509439.js.map",
+    "787.4b6c1a29.chunk.js.map": "./static/js/787.4b6c1a29.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.80822428.css",
-    "static/js/main.2fc79117.js"
+    "static/js/main.35509439.js"
   ]
 }
