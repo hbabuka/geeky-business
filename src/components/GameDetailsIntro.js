@@ -48,7 +48,7 @@ export const GameDetailsIntro = () => {
           <div className="flex flex-col gap-2 md:gap-1">
             <h2>{game.name}</h2>
             <div className="flex items-center gap-3">
-              <p className="text-secondary-500 mt-2 md:mt-0">
+              <p className="text-secondary-500">
                 Released: {releaseDate ?? "Not available"}
               </p>
               {isNew(releaseDate) && (
@@ -77,7 +77,7 @@ export const GameDetailsIntro = () => {
             className="rounded-[1.25rem]"
           />
         ) : (
-          <div className="h-[31rem] rounded-[1.25rem] overflow-hidden">
+          <div className="sm:h-[31rem] rounded-[1.25rem] overflow-hidden">
             <ImagePlaceholder iconSize={48} />
           </div>
         )}

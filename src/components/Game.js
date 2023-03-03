@@ -28,7 +28,7 @@ export const Game = ({ id, name, released, image, genre }) => {
             />
           ) : (
             <div className="h-40">
-              <ImagePlaceholder iconSize={12} />
+              <ImagePlaceholder iconSize={16} />
             </div>
           )}
         </div>
