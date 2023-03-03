@@ -5,13 +5,13 @@ Front-end development and UX design
 This is a UI design + development project, to present a [single-elimination bracket](https://en.wikipedia.org/wiki/Single-elimination_tournament) tournament from a given data set, using tools and technologies of my choice.
 
 ## Project links
-* Code [**repository**](https://github.com/hbabuka/single-elimination-bracket) on Github
-* UI design and design system in [**Figma**](https://www.figma.com/file/mZw2lAYwjzM9ioNmQTRRQt/Single-elimination-bracket)
-* [**Live demo**](https://hbabuka.github.io/single-elimination-bracket/) deployed to GitHub Pages:
+* [**Code repository**](https://github.com/hbabuka/geeky-business) on Github.
+* UI design and design system in [**Figma**](https://www.figma.com/file/o7MZ1Jl0SH47wAOfhjVJzS/Geeky-Business?node-id=3%3A3&t=KWHsCrYocX4mR5ul-1).
+* [**Live demo**](https://geeky-business.netlify.app/) deployed on Netlify.
 
 <details>
     <summary><em>Note: if you don't have a Figma account, don't forget to use the menu in the top left corner to navigate to different pages of the file</em></summary>
-<img width="222" alt="Screenshot 2022-09-18 at 22 55 14" src="https://user-images.githubusercontent.com/53868474/190927888-02597249-207f-4c90-bda4-c843f7d8ada5.png">
+<img width="220" alt="Screenshot 2023-03-03 at 18 19 42" src="https://user-images.githubusercontent.com/53868474/222785862-a828b1f3-cb61-4657-ada1-b7c0b89658f7.png">
 </details>
 
 ## Design description
