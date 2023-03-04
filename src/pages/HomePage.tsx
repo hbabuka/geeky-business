@@ -1,17 +1,18 @@
-import React, { Fragment } from "react";
+import { Fragment, ReactElement } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../redux/actions/gamesAction";
 import { GamesSection } from "../components/GamesSection";
 import { HeroSection } from "../components/HeroSection";
-import { navData } from "../constants";
+import { navData, NavDataModel } from "../constants";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 import { appendSearchInputData } from "../redux/actions/searchInputAction";
 import { Footer } from "../components/Footer";
 import { Spinner } from "../components/Spinner";
+import { AppDispatch, RootState } from "..";
 
-export const HomePage = () => {
-  const dispatch = useDispatch();
+export const HomePage = (): ReactElement => {
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadGames());
@@ -25,10 +26,10 @@ export const HomePage = () => {
     topMultiplayer,
     searched,
     gamesAreLoading,
-  } = useSelector((state) => state.games);
+  } = useSelector((state: RootState) => state.games);
 
-  const resolveGamesData = (section) => {
-    switch (section.id) {
+  const resolveGamesData = (section: NavDataModel | undefined) => {
+    switch (section?.id) {
       case "popular":
         return popular;
       case "latest":
@@ -50,7 +51,7 @@ export const HomePage = () => {
 
   const onClearSearchResults = () => {
     dispatch({ type: "CLEAR_SEARCHED" });
-    dispatch(appendSearchInputData(""));
+    dispatch(appendSearchInputData({ type: "SET_SEARCH_INPUT", payload: "" }));
   };
 
   return gamesAreLoading ? (
@@ -60,7 +61,7 @@ export const HomePage = () => {
       <main>
         <HeroSection />
         <div className="flex flex-col gap-12 sm:gap-16">
-          {searched.length > 0 && (
+          {searched.length > 0 && searchedData && (
             <>
               <GamesSection
                 id={searchedData.id}

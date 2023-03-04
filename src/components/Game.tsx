@@ -1,13 +1,27 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { loadDetails } from "../redux/actions/detailsAction";
 import { Link } from "react-router-dom";
-import { resizeImage } from "../utils.js";
-import { isNew } from "../utils.js";
+import { resizeImage, isNew } from "../utils";
 import { ImagePlaceholder } from "./ImagePlaceholder";
+import { AppDispatch } from "..";
+import { ReactElement } from "react";
 
-export const Game = ({ id, name, released, image, genre }) => {
-  const dispatch = useDispatch();
+interface Props {
+  id: string;
+  name: string;
+  released: string;
+  image: string;
+  genre: string;
+}
+
+export const Game = ({
+  id,
+  name,
+  released,
+  image,
+  genre,
+}: Props): ReactElement => {
+  const dispatch: AppDispatch = useDispatch();
 
   const loadDetailsHandler = () => {
     dispatch(loadDetails(id));

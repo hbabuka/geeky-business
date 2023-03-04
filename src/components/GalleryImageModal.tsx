@@ -1,7 +1,19 @@
-import React, { useEffect, useState } from "react";
+import { ReactElement, ReactNode, useEffect, useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
-export const GalleryImageModal = ({ children, src, alt, setOpenModal }) => {
+interface Props {
+  children: ReactNode;
+  src: string;
+  alt: string;
+  setOpenModal: (arg: boolean) => void;
+}
+
+export const GalleryImageModal = ({
+  children,
+  src,
+  alt,
+  setOpenModal,
+}: Props): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleIsOpen = () => {

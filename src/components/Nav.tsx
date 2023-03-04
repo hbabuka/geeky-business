@@ -1,7 +1,7 @@
-import React, { useState, useRef, Fragment } from "react";
+import { useState, useRef, ReactElement } from "react";
 import { ReactComponent as Logo } from "../assets/geeky-business-logo.svg";
 import { useDispatch } from "react-redux";
-import { navData } from "../constants";
+import { navData, NavDataModel } from "../constants";
 import { useNavigate } from "react-router-dom";
 import { appendSearchInputData } from "../redux/actions/searchInputAction";
 import {
@@ -9,12 +9,17 @@ import {
   ChevronDownIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { AppDispatch } from "..";
 
-const NavItem = ({ data }) => {
-  const adaptedName = data.name.replaceAll(" Games", "");
+const NavItem = ({
+  data,
+}: {
+  data: NavDataModel | undefined;
+}): ReactElement => {
+  const adaptedName = data?.name.replaceAll(" Games", "");
   return (
     <a
-      href={`/#${data.id}`}
+      href={`/#${data?.id}`}
       className="block px-0 md:px-3 py-2 text-left md:text-center text-secondary-500 rounded-lg md:hover:bg-primary-50 hover:text-primary-600 duration-300"
     >
       {adaptedName}
@@ -24,8 +29,8 @@ const NavItem = ({ data }) => {
 
 export const Nav = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const dropdownRef = useRef(null);
+  const dispatch: AppDispatch = useDispatch();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [topDropDownMenuIsOpen, setTopDropdownMenuIsOpen] = useState(false);
@@ -33,19 +38,19 @@ export const Nav = () => {
   const onClickLogo = () => {
     navigate("/");
     dispatch({ type: "CLEAR_SEARCHED" });
-    dispatch(appendSearchInputData(""));
+    dispatch(appendSearchInputData({ type: "SET_SEARCH_INPUT", payload: "" }));
   };
 
   const onClickMenuButton = () => {
     setMenuIsOpen(!menuIsOpen);
-    document.querySelector("#mobile-menu").classList.toggle("hidden");
+    document.querySelector("#mobile-menu")!.classList.toggle("hidden");
   };
 
   const onClickTopDropdownMenu = () => {
     setTopDropdownMenuIsOpen(!topDropDownMenuIsOpen);
   };
 
-  const closeOpenDropdownMenu = (e) => {
+  const closeOpenDropdownMenu = (e: any) => {
     if (
       dropdownRef.current &&
       topDropDownMenuIsOpen &&

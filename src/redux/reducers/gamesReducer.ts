@@ -8,7 +8,7 @@ const initialState = {
   gamesAreLoading: true,
 };
 
-export const gamesReducer = (state = initialState, action) => {
+export const gamesReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case "FETCH_GAMES":
       return {

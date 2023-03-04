@@ -1,15 +1,16 @@
-import React from "react";
+import { ReactElement } from "react";
 import { useSelector } from "react-redux";
 import { Breadcrumb } from "./Breadcrumb";
 import { isNew, resizeImage } from "../utils";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { ImagePlaceholder } from "./ImagePlaceholder";
+import { RootState } from "..";
 
-export const GameDetailsIntro = () => {
-  const { game } = useSelector((state) => state.details);
+export const GameDetailsIntro = (): ReactElement => {
+  const { game } = useSelector((state: RootState) => state.details);
 
   const { popular, latest, upcoming, searched } = useSelector(
-    (state) => state.games
+    (state: RootState) => state.games
   );
 
   const allGames = [...popular, ...latest, ...upcoming, ...searched];

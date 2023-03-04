@@ -44,13 +44,13 @@ export const topIndieGamesURL = () => `${GAMES_URL}${TOP_INDIE}`;
 export const topMultiplayerGamesURL = () => `${GAMES_URL}${TOP_MULTIPLAYER}`;
 
 // Game details URL's
-export const gameDetailsURL = (game_id) =>
+export const gameDetailsURL = (game_id: string) =>
   `${BASE_URL}${LIST_OF_GAMES}/${game_id}${API_KEY}`;
-export const gameScreenshotsURL = (game_id) =>
+export const gameScreenshotsURL = (game_id: string) =>
   `${BASE_URL}${LIST_OF_GAMES}/${game_id}/screenshots${API_KEY}`;
-export const gameMoviesURL = (game_id) =>
+export const gameMoviesURL = (game_id: string) =>
   `${BASE_URL}${LIST_OF_GAMES}/${game_id}/movies${API_KEY}`;
 
 // Searched games
-export const searchGamesURL = (game_name) =>
+export const searchGamesURL = (game_name: string) =>
   `${GAMES_URL}${SEARCH_GAMES}${game_name}&page_size=12`;

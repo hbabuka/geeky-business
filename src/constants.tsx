@@ -6,10 +6,11 @@ import {
   StarIcon,
   UsersIcon,
 } from "@heroicons/react/24/outline";
+import { ReactNode } from "react";
 
 // Data constants
 
-export const navData = [
+export const navData: NavDataModel[] = [
   {
     id: "popular",
     name: "Popular Games",
@@ -50,3 +51,40 @@ export const navData = [
     icon: <DocumentMagnifyingGlassIcon />,
   },
 ];
+
+// Shared data models
+
+export interface NavDataModel {
+  id: string;
+  name: string;
+  description: string;
+  icon: ReactNode;
+}
+
+export interface GameModel {
+  id: string;
+  name: string;
+  released: string;
+  background_image: string;
+  genres: GenreModel[];
+}
+
+export interface GameDetailsModel {
+  name: string;
+  description: string;
+}
+
+export interface PublisherModel {
+  name: string;
+}
+
+export interface GenreModel {
+  name: string;
+}
+
+export interface PlatformsModel {
+  platform: {
+    id: number;
+    name: string;
+  };
+}

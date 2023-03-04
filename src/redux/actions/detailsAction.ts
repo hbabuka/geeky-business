@@ -1,7 +1,8 @@
 import axios from "axios";
+import { AppDispatch } from "../..";
 import { gameDetailsURL, gameScreenshotsURL, gameMoviesURL } from "../../api";
 
-export const loadDetails = (id) => async (dispatch) => {
+export const loadDetails = (id: string) => async (dispatch: AppDispatch) => {
   dispatch({
     type: "LOADING_DETAILS",
   });

@@ -1,6 +1,17 @@
-import React from "react";
+import { ReactElement, ReactNode } from "react";
+import { GameModel } from "../constants";
 import { useHashScroll } from "../utils";
 import { Game } from "./Game";
+
+interface Props {
+  id: string;
+  title: string;
+  icon: ReactNode;
+  description: string;
+  gamesData: GameModel[];
+  action?: ReactNode;
+  topRated?: boolean;
+}
 
 export const GamesSection = ({
   id,
@@ -10,7 +21,7 @@ export const GamesSection = ({
   gamesData,
   action,
   topRated,
-}) => {
+}: Props): ReactElement => {
   useHashScroll(id, true);
 
   return (

@@ -5,7 +5,7 @@ const initialState = {
   isLoading: true,
 };
 
-export const detailsReducer = (state = initialState, action) => {
+export const detailsReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case "GET_DETAILS":
       return {

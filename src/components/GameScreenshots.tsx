@@ -1,19 +1,31 @@
 import { ArrowRightIcon, PhotoIcon } from "@heroicons/react/24/outline";
-import React, { useState } from "react";
+import { ReactElement, useState } from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "..";
 import { GalleryImageModal } from "./GalleryImageModal";
 
-export const GameScreenshots = ({ openPreviewModal }) => {
+interface Props {
+  openPreviewModal: boolean;
+}
+
+interface ScreenshotModel {
+  id: string;
+  image: string;
+}
+
+export const GameScreenshots = ({ openPreviewModal }: Props): ReactElement => {
   const [openImageModal, setOpenImageModal] = useState(false);
 
-  const { game, screenshots } = useSelector((state) => state.details);
+  const { game, screenshots } = useSelector(
+    (state: RootState) => state.details
+  );
 
   return (
     <div>
       <h4 className="mb-6">Screenshots</h4>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {screenshots.results.length > 0 ? (
-          screenshots.results?.map((screenshot) => (
+          screenshots.results?.map((screenshot: ScreenshotModel) => (
             <GalleryImageModal
               src={screenshot.image}
               alt={screenshot.id}

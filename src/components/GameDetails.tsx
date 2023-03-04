@@ -1,12 +1,11 @@
-import React from "react";
 import { useSelector } from "react-redux";
-import { PreviewModal } from "./PreviewModal.js";
+import { PreviewModal } from "./PreviewModal";
 import {
   ArrowTopRightOnSquareIcon,
   PlayIcon,
 } from "@heroicons/react/24/outline";
 
-// Image imports
+// Platform imports
 import { ReactComponent as Apple } from "../assets/apple.svg";
 import { ReactComponent as Gamepad } from "../assets/gamepad.svg";
 import { ReactComponent as Nintendo } from "../assets/nintendo.svg";
@@ -14,12 +13,28 @@ import { ReactComponent as Playstation } from "../assets/playstation.svg";
 import { ReactComponent as Steam } from "../assets/steam.svg";
 import { ReactComponent as Xbox } from "../assets/xbox.svg";
 import { ReactComponent as Linux } from "../assets/linux.svg";
+import { RootState } from "..";
+import { ReactElement } from "react";
+import {
+  GameDetailsModel,
+  GenreModel,
+  PlatformsModel,
+  PublisherModel,
+} from "../constants";
 
-export const GameDetails = ({ showPreviewModal, setShowPreviewModal }) => {
-  const { game, movies } = useSelector((state) => state.details);
+interface Props {
+  showPreviewModal: boolean;
+  setShowPreviewModal: (arg: boolean) => void;
+}
 
-  const resolvePlatformIcons = (platform) => {
-    const platformIncludes = (value) => {
+export const GameDetails = ({
+  showPreviewModal,
+  setShowPreviewModal,
+}: Props): ReactElement => {
+  const { game, movies } = useSelector((state: RootState) => state.details);
+
+  const resolvePlatformIcons = (platform: string) => {
+    const platformIncludes = (value: string) => {
       return platform.toLowerCase().includes(value);
     };
 
@@ -38,12 +53,12 @@ export const GameDetails = ({ showPreviewModal, setShowPreviewModal }) => {
     } else return <Gamepad className="w-5 h-5" />;
   };
 
-  function resolveDescriptionMarkup(game) {
+  function resolveDescriptionMarkup(game: GameDetailsModel) {
     return { __html: game.description };
   }
 
   const { popular, latest, upcoming, searched } = useSelector(
-    (state) => state.games
+    (state: RootState) => state.games
   );
 
   const allGames = [...popular, ...latest, ...upcoming, ...searched];
@@ -53,14 +68,16 @@ export const GameDetails = ({ showPreviewModal, setShowPreviewModal }) => {
 
   const publishers =
     game.publishers?.length > 0
-      ? game.publishers.map((publisher) => publisher.name).join(", ")
+      ? game.publishers
+          .map((publisher: PublisherModel) => publisher.name)
+          .join(", ")
       : "Unknown";
 
   return (
     <div className="flex flex-col gap-6 pt-6">
       {gameInGames?.genres.length > 0 && (
         <div className="flex gap-2">
-          {gameInGames?.genres.map((genre, index) => (
+          {gameInGames?.genres.map((genre: GenreModel, index: number) => (
             <span
               className="chip chip-medium chip-outlined border-primary-400 text-primary-600"
               key={index}
@@ -79,7 +96,7 @@ export const GameDetails = ({ showPreviewModal, setShowPreviewModal }) => {
         <div className="bg-white rounded-[1.25rem] px-5 py-5 flex flex-col gap-6 border border-secondary-300 sm:w-60 shrink-0">
           <h6>Available on the following platforms:</h6>
           <div className="flex flex-col divide-y divide-secondary-200 gap-4">
-            {game.platforms?.map((item) => (
+            {game.platforms?.map((item: PlatformsModel) => (
               <div
                 key={item.platform.id}
                 className="flex grow items-center gap-4 [&:not(:first-child)]:pt-4"

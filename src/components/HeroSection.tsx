@@ -1,20 +1,21 @@
-import React from "react";
+import { ReactElement } from "react";
 import { ReactComponent as AnimatedLogo } from "../assets/hero-logo-icon-color.svg";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSearch } from "../redux/actions/gamesAction";
 import { appendSearchInputData } from "../redux/actions/searchInputAction";
+import { AppDispatch, RootState } from "..";
 
-export const HeroSection = () => {
-  const dispatch = useDispatch();
+export const HeroSection = (): ReactElement => {
+  const dispatch: AppDispatch = useDispatch();
 
-  const { value } = useSelector((state) => state.searchInput);
+  const { value } = useSelector((state: RootState) => state.searchInput);
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: any) => {
     dispatch(appendSearchInputData(e.target.value));
   };
 
-  const submitSearch = (e) => {
+  const submitSearch = (e: any) => {
     e.preventDefault();
     dispatch(fetchSearch(value));
   };
@@ -46,7 +47,7 @@ export const HeroSection = () => {
               </div>
               <input
                 type="search"
-                value={value}
+                value={value.payload}
                 onChange={handleSearch}
                 id="search-games"
                 className="bg-white border border-secondary-300 text-gray-900 rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pr-3 pl-4 sm:pl-14 h-12 placeholder:text-secondary-400 duration-300"

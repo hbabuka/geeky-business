@@ -1,7 +1,17 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import React from "react";
+import { ReactElement } from "react";
 
-export const PreviewModal = ({ setOpenModal, title, source }) => {
+interface Props {
+  setOpenModal: (arg: boolean) => void;
+  title: string;
+  source: string;
+}
+
+export const PreviewModal = ({
+  setOpenModal,
+  title,
+  source,
+}: Props): ReactElement => {
   document.body.style.overflow = "hidden";
 
   const closeModal = () => {

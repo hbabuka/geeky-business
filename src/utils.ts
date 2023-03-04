@@ -7,7 +7,7 @@ import { useEffect } from "react";
  * @param {string} size - The dessired size of the image
  * @returns the API url with adapted image size
  */
-export const resizeImage = (imagePath, size) => {
+export const resizeImage = (imagePath: string, size: number) => {
   const regex = /\'media\/screenshots/;
   const image = imagePath?.match(regex)
     ? imagePath?.replace(
@@ -25,7 +25,7 @@ export const resizeImage = (imagePath, size) => {
  * @param {Date} gameReleased - The release date of the game
  * @returns boolean if the game is new or not
  */
-export const isNew = (gameReleased) => {
+export const isNew = (gameReleased: string) => {
   const currentDate = new Date();
 
   const getDateOneMonthAgo = () => {
@@ -88,11 +88,11 @@ export const isNew = (gameReleased) => {
  * @param {boolean} async -
  * @param {number} offset - The offset from the top of the screen
  */
-export const useHashScroll = (id, async = false, offset = 0) => {
+export const useHashScroll = (id: string, async = false, offset = 0) => {
   useEffect(() => {
     const { hash } = window.location;
 
-    const scrollToElement = (id) => {
+    const scrollToElement = (id: string) => {
       const element = document.getElementById(id);
 
       if (element) {
