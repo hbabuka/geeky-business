@@ -14,6 +14,100 @@ This is a UI design + development project, to present a [single-elimination brac
 <img width="220" alt="Screenshot 2023-03-03 at 18 19 42" src="https://user-images.githubusercontent.com/53868474/222785862-a828b1f3-cb61-4657-ada1-b7c0b89658f7.png">
 </details>
 
+## Implementation details
+### Technologies
+The following technologies are used for the implementation of the project:
+* [React 18.2.0](https://reactjs.org/)
+* [Typescript 4.9.5](https://www.typescriptlang.org/)
+* [Tailwind CSS 3.2.4](https://tailwindcss.com/)
+* [Redux 4.2.0](https://redux.js.org/)
+
+### Setup
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+#### Prerequisites
+[Node and npm](https://nodejs.org/en/download/) are installed. Here are the versions I used while implementing this project:
+```
+$ node --version
+v16.18.0
+
+$ npm --version
+8.19.2
+```
+Git is installed. Here's the version I used while implementing this project:
+```
+$ git --version
+git version 2.37.1
+```
+
+#### Local development environment
+1. Clone remote repository:
+```
+https://github.com/hbabuka/geekt-business.git
+```
+and change directory to your local project folder by using
+```
+$ cd ../<your-folder>
+```
+2. Install all required dependencies locally by executing:
+```
+$ npm install
+```
+3. Run the app in development mode, by running
+```
+$ npm start
+```
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### Folders and files structure
+All components are placed in a separate folder `components` and then they are also hierarchically structured inside this folder. Every component has its own `.tsx` file which contains the `HTML` and the `JS` code and a separate `.scss` file where all styles related to this component are written. These are implemented as `Sass Partials` and contain little snippets of SCSS that I include in the main `styles.scss` file. This way I modularize my CSS and help keep things easier to maintain. Moreover, I keep a separate `SCSS` file where I keep all my styling variables, mixins and media queries organized and I import it whenever I need them. In the `utils.ts` file I keep some utility functions that I thought may be reused later in the project or I thought they should be extracted separately. The project structure looks as follows:
+```
+.
+└── root
+    ├── public
+    ├── src
+    │   ├── @types
+    │   │   └── assets
+    │   │       └── index.d.ts
+    │   ├── App.tsx
+    │   ├── api.ts
+    │   ├── assets
+    │   ├── components
+    │   │   ├── Breadcrumb.tsx
+    │   │   ├── Footer.tsx
+    │   │   ├── GalleryImageModal.tsx
+    │   │   ├── Game.tsx
+    │   │   ├── GameDetails.tsx
+    │   │   ├── GameDetailsIntro.tsx
+    │   │   ├── GameScreenshots.tsx
+    │   │   ├── GamesSection.tsx
+    │   │   ├── HeroSection.tsx
+    │   │   ├── ImagePlaceholder.tsx
+    │   │   ├── Nav.tsx
+    │   │   ├── PreviewModal.tsx
+    │   │   └── Spinner.tsx
+    │   ├── constants.tsx
+    │   ├── index.css
+    │   ├── index.tsx
+    │   ├── pages
+    │   │   ├── GameDetailsPage.tsx
+    │   │   └── HomePage.tsx
+    │   ├── redux
+    │   │   ├── actions
+    │   │   │   ├── detailsAction.ts
+    │   │   │   ├── gamesAction.ts
+    │   │   │   └── searchInputAction.ts
+    │   │   └── reducers
+    │   │       ├── detailsReducer.ts
+    │   │       ├── gamesReducer.ts
+    │   │       └── searchInputReducer.ts
+    │   └── utils.ts
+    ├── package-lock.json
+    ├── package.json
+    ├── tailwind.config.js
+    └── tsconfig.json   
+```
+
 ## Design description
 ### UX concept
 The design decisions for this project are, of course, centered around the single-elimination bracket and the way the teams, matches and scores are presented. There was no other way than to go with simplistic approach, where I chose a horizontal bracket model for web screens and vertical model for smaller screens i.e. mobile devices. This was only logical given their proportional similarities.
@@ -43,69 +137,7 @@ Includes an analysis of the layout and how it can be implemented, taking into co
 #### Screen designs
 Contains the screen designs for both web and mobile. There are designs for dark and light theme. For the mobile designs there is also an additional consideration of how the UX can be improved by using tabs as horizontal navigation through the rounds.
 
-## Implementation details
-### Technologies
-For the implementation of the project, I used the following technologies:
-* [React 18.2.0](https://reactjs.org/)
-* [Typescript 4.8.3](https://www.typescriptlang.org/)
-* [Sass 1.54.9](https://sass-lang.com/)
 
-### Setup
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-#### Prerequisites
-[Node and npm](https://nodejs.org/en/download/) are installed. Here are the versions I used while implementing this project:
-```
-$ node --version
-v17.0.1
-
-$ npm --version
-8.1.0
-```
-Git is installed. Here's the version I used while implementing this project:
-```
-$ git --version
-git version 2.32.1
-```
-
-#### Local development environment
-1. Clone remote repository:
-```
-https://github.com/hbabuka/single-elimination-bracket.git
-```
-and change directory to your local project folder by using
-```
-$ cd ../<your-folder>
-```
-2. Install all required dependencies locally by executing:
-```
-$ npm install
-```
-3. Run the app in development mode, by running
-```
-$ npm start
-```
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-### Folders and files structure
-All components are placed in a separate folder `components` and then they are also hierarchically structured inside this folder. Every component has its own `.tsx` file which contains the `HTML` and the `JS` code and a separate `.scss` file where all styles related to this component are written. These are implemented as `Sass Partials` and contain little snippets of SCSS that I include in the main `styles.scss` file. This way I modularize my CSS and help keep things easier to maintain. Moreover, I keep a separate `SCSS` file where I keep all my styling variables, mixins and media queries organized and I import it whenever I need them. In the `utils.ts` file I keep some utility functions that I thought may be reused later in the project or I thought they should be extracted separately. The project structure looks as follows:
-```
-.
-└── root/
-    ├── public
-    └── src/
-        ├── assets
-        ├── components/
-        │   └── round/
-        │       ├── bracket-lines
-        │       └── match/
-        │           └── team
-        ├── styles/
-        │   ├── styles
-        │   └── style-guide-variables
-        ├── data
-        └── utils
-```
 
 ## Testing
 #### Configurable data
