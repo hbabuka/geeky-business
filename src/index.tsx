@@ -3,14 +3,20 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { gamesReducer } from "./redux/reducers/gamesReducer";
+import { detailsReducer } from "./redux/reducers/detailsReducer";
+import { searchInputReducer } from "./redux/reducers/searchInputReducer";
 
 // Redux setup
 import { configureStore } from "@reduxjs/toolkit";
-import { reducer } from "./redux/reducers/rootReducer";
 import { Provider } from "react-redux";
 
 const store = configureStore({
-  reducer,
+  reducer: {
+    games: gamesReducer,
+    details: detailsReducer,
+    searchInput: searchInputReducer,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
