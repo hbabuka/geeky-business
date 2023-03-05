@@ -8,7 +8,7 @@ import { useEffect } from "react";
  * @returns the API url with adapted image size
  */
 export const resizeImage = (imagePath: string, size: number) => {
-  const regex = /\'media\/screenshots/;
+  const regex = /media\/screenshots/;
   const image = imagePath?.match(regex)
     ? imagePath?.replace(
         "media/screenshots",

@@ -1,4 +1,8 @@
-import { MoviesModel, PlatformsModel, ScreenshotModel } from "../../constants";
+import {
+  MoviesModel,
+  PlatformsModel,
+  ScreenshotModel,
+} from "../../utils/constants";
 
 interface DetailsStateModel {
   game: { platforms: PlatformsModel[] };

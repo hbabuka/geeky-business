@@ -7,7 +7,7 @@ import {
   searchGamesURL,
   topIndieGamesURL,
   topMultiplayerGamesURL,
-} from "../../api";
+} from "../../utils/api";
 
 // Action creator
 

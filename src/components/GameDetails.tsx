@@ -20,7 +20,7 @@ import {
   GenreModel,
   PlatformsModel,
   PublisherModel,
-} from "../constants";
+} from "../utils/constants";
 
 interface Props {
   showPreviewModal: boolean;

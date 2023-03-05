@@ -1,4 +1,4 @@
-import { GameModel } from "../../constants";
+import { GameModel } from "../../utils/constants";
 
 interface GamesStateModel {
   popular: GameModel[];

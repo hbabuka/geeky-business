@@ -1,6 +1,10 @@
 import axios from "axios";
 import { AppDispatch } from "../..";
-import { gameDetailsURL, gameScreenshotsURL, gameMoviesURL } from "../../api";
+import {
+  gameDetailsURL,
+  gameScreenshotsURL,
+  gameMoviesURL,
+} from "../../utils/api";
 
 export const loadDetails = (id: string) => async (dispatch: AppDispatch) => {
   dispatch({

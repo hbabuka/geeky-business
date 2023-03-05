@@ -1,7 +1,7 @@
 import { useState, useRef, ReactElement } from "react";
 import { ReactComponent as Logo } from "../assets/geeky-business-logo.svg";
 import { useDispatch } from "react-redux";
-import { navData, NavDataModel } from "../constants";
+import { navData, NavDataModel } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
 import { appendSearchInputData } from "../redux/actions/searchInputAction";
 import {

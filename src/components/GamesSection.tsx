@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode } from "react";
-import { GameModel } from "../constants";
-import { useHashScroll } from "../utils";
+import { GameModel } from "../utils/constants";
+import { useHashScroll } from "../utils/utils";
 import { Game } from "./Game";
 
 interface Props {

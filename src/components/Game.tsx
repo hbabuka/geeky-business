@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { loadDetails } from "../redux/actions/detailsAction";
 import { Link } from "react-router-dom";
-import { resizeImage, isNew } from "../utils";
+import { resizeImage, isNew } from "../utils/utils";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { AppDispatch } from "..";
 import { ReactElement } from "react";

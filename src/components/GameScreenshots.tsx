@@ -2,7 +2,7 @@ import { ArrowRightIcon, PhotoIcon } from "@heroicons/react/24/outline";
 import { ReactElement, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "..";
-import { ScreenshotModel } from "../constants";
+import { ScreenshotModel } from "../utils/constants";
 import { GalleryImageModal } from "./GalleryImageModal";
 
 interface Props {

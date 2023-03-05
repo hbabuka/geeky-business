@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { useSelector } from "react-redux";
 import { Breadcrumb } from "./Breadcrumb";
-import { isNew, resizeImage } from "../utils";
+import { isNew, resizeImage } from "../utils/utils";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { RootState } from "..";

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../redux/actions/gamesAction";
 import { GamesSection } from "../components/GamesSection";
 import { HeroSection } from "../components/HeroSection";
-import { navData, NavDataModel } from "../constants";
+import { navData, NavDataModel } from "../utils/constants";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 import { appendSearchInputData } from "../redux/actions/searchInputAction";
 import { Footer } from "../components/Footer";
