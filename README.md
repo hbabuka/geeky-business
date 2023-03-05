@@ -21,6 +21,8 @@ The following technologies are used for the implementation of the project:
 * [Typescript 4.9.5](https://www.typescriptlang.org/)
 * [Tailwind CSS 3.2.4](https://tailwindcss.com/)
 * [Redux 4.2.0](https://redux.js.org/)
+* [Axios 1.2.2](https://axios-http.com/)
+* [Jest 29.4.3](https://jestjs.io/)
 
 ### Setup
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -43,7 +45,7 @@ git version 2.37.1
 #### Local development environment
 1. Clone remote repository:
 ```
-https://github.com/hbabuka/geekt-business.git
+https://github.com/hbabuka/geeky-business.git
 ```
 and change directory to your local project folder by using
 ```
@@ -64,17 +66,24 @@ All components are placed in a separate folder `components` and then they are al
 ```
 .
 └── root
-    ├── public
+    ├── *public*
     ├── src
     │   ├── @types
     │   │   └── assets
     │   │       └── index.d.ts
-    │   ├── App.tsx
-    │   ├── api.ts
     │   ├── assets
+    │   │   ├── apple.svg
+    │   │   ├── gamepad.svg
+    │   │   ├── geeky-business-logo.svg
+    │   │   ├── hero-logo-icon-color.svg
+    │   │   ├── linux.svg
+    │   │   ├── logo-spinner-secondary.svg
+    │   │   ├── nintendo.svg
+    │   │   ├── playstation.svg
+    │   │   ├── steam.svg
+    │   │   └── xbox.svg
     │   ├── components
     │   │   ├── Breadcrumb.tsx
-    │   │   ├── Footer.tsx
     │   │   ├── GalleryImageModal.tsx
     │   │   ├── Game.tsx
     │   │   ├── GameDetails.tsx
@@ -82,13 +91,12 @@ All components are placed in a separate folder `components` and then they are al
     │   │   ├── GameScreenshots.tsx
     │   │   ├── GamesSection.tsx
     │   │   ├── HeroSection.tsx
-    │   │   ├── ImagePlaceholder.tsx
     │   │   ├── Nav.tsx
     │   │   ├── PreviewModal.tsx
-    │   │   └── Spinner.tsx
-    │   ├── constants.tsx
-    │   ├── index.css
-    │   ├── index.tsx
+    │   │   └── shared
+    │   │       ├── Footer.tsx
+    │   │       ├── ImagePlaceholder.tsx
+    │   │       └── Spinner.tsx
     │   ├── pages
     │   │   ├── GameDetailsPage.tsx
     │   │   └── HomePage.tsx
@@ -101,11 +109,20 @@ All components are placed in a separate folder `components` and then they are al
     │   │       ├── detailsReducer.ts
     │   │       ├── gamesReducer.ts
     │   │       └── searchInputReducer.ts
-    │   └── utils.ts
+    │   ├── utils
+    │   │   ├── api.ts
+    │   │   ├── constants.tsx
+    │   │   ├── utils.spec.ts
+    │   │   └── utils.ts
+    │   ├── App.tsx
+    │   ├── index.css
+    │   └── index.tsx
+    ├── babel.config.js
+    ├── jest.config.js
     ├── package-lock.json
     ├── package.json
     ├── tailwind.config.js
-    └── tsconfig.json   
+    └── tsconfig.json
 ```
 
 ## Design description
