@@ -75,7 +75,7 @@ export const GameDetailsIntro = (): ReactElement => {
           <img
             src={resizeImage(game.background_image, 1280)}
             alt={game.name}
-            className="rounded-[1.25rem]"
+            className="rounded-[1.25rem] -mt-3 lg:mt-0"
           />
         ) : (
           <div className="sm:h-[31rem] rounded-[1.25rem] overflow-hidden">

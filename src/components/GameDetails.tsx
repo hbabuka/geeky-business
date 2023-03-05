@@ -74,7 +74,7 @@ export const GameDetails = ({
       : "Unknown";
 
   return (
-    <div className="flex flex-col gap-6 pt-6">
+    <div className="flex flex-col gap-6 mt-4 lg:mt-6">
       {gameInGames?.genres.length > 0 && (
         <div className="flex gap-2">
           {gameInGames?.genres.map((genre: GenreModel, index: number) => (
@@ -91,7 +91,7 @@ export const GameDetails = ({
       <div className="flex gap-4 sm:gap-8 flex-col sm:flex-row">
         <p
           dangerouslySetInnerHTML={resolveDescriptionMarkup(game)}
-          className="text-secondary-600 grow"
+          className="text-secondary-600 grow -mt-2 lg:mt-0"
         ></p>
         <div className="bg-white rounded-[1.25rem] px-5 py-5 flex flex-col gap-6 border border-secondary-300 sm:w-60 shrink-0">
           <h6>Available on the following platforms:</h6>
