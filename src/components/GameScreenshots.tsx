@@ -2,15 +2,11 @@ import { ArrowRightIcon, PhotoIcon } from "@heroicons/react/24/outline";
 import { ReactElement, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "..";
+import { ScreenshotModel } from "../constants";
 import { GalleryImageModal } from "./GalleryImageModal";
 
 interface Props {
   openPreviewModal: boolean;
-}
-
-interface ScreenshotModel {
-  id: string;
-  image: string;
 }
 
 export const GameScreenshots = ({ openPreviewModal }: Props): ReactElement => {

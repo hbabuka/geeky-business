@@ -51,7 +51,7 @@ export const HomePage = (): ReactElement => {
 
   const onClearSearchResults = () => {
     dispatch({ type: "CLEAR_SEARCHED" });
-    dispatch(appendSearchInputData({ type: "SET_SEARCH_INPUT", payload: "" }));
+    dispatch(appendSearchInputData(""));
   };
 
   return gamesAreLoading ? (

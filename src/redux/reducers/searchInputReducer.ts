@@ -1,4 +1,8 @@
-const initialState = {
+interface SearchInputStateModel {
+  value: string;
+}
+
+const initialState: SearchInputStateModel = {
   value: "",
 };
 

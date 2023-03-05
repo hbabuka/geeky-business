@@ -38,7 +38,7 @@ export const Nav = () => {
   const onClickLogo = () => {
     navigate("/");
     dispatch({ type: "CLEAR_SEARCHED" });
-    dispatch(appendSearchInputData({ type: "SET_SEARCH_INPUT", payload: "" }));
+    dispatch(appendSearchInputData(""));
   };
 
   const onClickMenuButton = () => {

@@ -1,4 +1,13 @@
-const initialState = {
+import { MoviesModel, PlatformsModel, ScreenshotModel } from "../../constants";
+
+interface DetailsStateModel {
+  game: { platforms: PlatformsModel[] };
+  screenshots: { results: ScreenshotModel[] };
+  movies: { results: MoviesModel[] };
+  isLoading: boolean;
+}
+
+const initialState: DetailsStateModel = {
   game: { platforms: [] },
   screenshots: { results: [] },
   movies: { results: [] },

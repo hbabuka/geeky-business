@@ -88,3 +88,16 @@ export interface PlatformsModel {
     name: string;
   };
 }
+
+export interface ScreenshotModel {
+  id: string;
+  image: string;
+}
+
+export interface MoviesModel {
+  name: string;
+  date: {
+    480: string;
+    max: string;
+  };
+}

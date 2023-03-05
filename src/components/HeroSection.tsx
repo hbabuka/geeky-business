@@ -47,7 +47,7 @@ export const HeroSection = (): ReactElement => {
               </div>
               <input
                 type="search"
-                value={value.payload}
+                value={value}
                 onChange={handleSearch}
                 id="search-games"
                 className="bg-white border border-secondary-300 text-gray-900 rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pr-3 pl-4 sm:pl-14 h-12 placeholder:text-secondary-400 duration-300"

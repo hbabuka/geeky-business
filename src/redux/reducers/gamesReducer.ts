@@ -1,4 +1,16 @@
-const initialState = {
+import { GameModel } from "../../constants";
+
+interface GamesStateModel {
+  popular: GameModel[];
+  latest: GameModel[];
+  upcoming: GameModel[];
+  topIndie: GameModel[];
+  topMultiplayer: GameModel[];
+  searched: GameModel[];
+  gamesAreLoading: boolean;
+}
+
+const initialState: GamesStateModel = {
   popular: [],
   latest: [],
   upcoming: [],
