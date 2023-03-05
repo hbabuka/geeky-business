@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { ReactComponent as SpinnerSvg } from "../assets/logo-spinner-secondary.svg";
+import { ReactComponent as SpinnerSvg } from "../../assets/logo-spinner-secondary.svg";
 
 export const Spinner = (): ReactElement => {
   return (
