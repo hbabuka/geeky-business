@@ -6,8 +6,8 @@ import { loadDetails } from "../redux/actions/detailsAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { loadGames } from "../redux/actions/gamesAction";
-import { Footer } from "../components/Footer";
-import { Spinner } from "../components/Spinner";
+import { Footer } from "../components/shared/Footer";
+import { Spinner } from "../components/shared/Spinner";
 import { AppDispatch, RootState } from "..";
 
 export const GameDetailsPage = (): ReactElement => {

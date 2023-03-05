@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Breadcrumb } from "./Breadcrumb";
 import { isNew, resizeImage } from "../utils/utils";
 import { StarIcon } from "@heroicons/react/24/solid";
-import { ImagePlaceholder } from "./ImagePlaceholder";
+import { ImagePlaceholder } from "./shared/ImagePlaceholder";
 import { RootState } from "..";
 
 export const GameDetailsIntro = (): ReactElement => {

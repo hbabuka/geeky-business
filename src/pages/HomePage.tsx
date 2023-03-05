@@ -7,8 +7,8 @@ import { HeroSection } from "../components/HeroSection";
 import { navData, NavDataModel } from "../utils/constants";
 import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline";
 import { appendSearchInputData } from "../redux/actions/searchInputAction";
-import { Footer } from "../components/Footer";
-import { Spinner } from "../components/Spinner";
+import { Footer } from "../components/shared/Footer";
+import { Spinner } from "../components/shared/Spinner";
 import { AppDispatch, RootState } from "..";
 
 export const HomePage = (): ReactElement => {
