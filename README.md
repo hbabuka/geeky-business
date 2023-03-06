@@ -364,17 +364,14 @@ The app is made fully responsive for all screens and devices. It can be tested i
 
 ## App screenshots
 #### Desktop
-![Uploading screencapture-geeky-business-netlify-app-2023-03-06-02_26_13.png…]()
+![screencapture-geeky-business-netlify-app-2023-03-06-02_26_13](https://user-images.githubusercontent.com/53868474/223000489-f618e218-07f9-4c6a-8b18-3e901ce105a2.jpg)
+![screencapture-localhost-3000-game-894577-2023-03-05-00_55_32](https://user-images.githubusercontent.com/53868474/223000598-74d7239a-80b8-46ef-b290-45517a15241b.jpg)
+![screencapture-localhost-3000-game-15272-2023-03-05-00_56_35](https://user-images.githubusercontent.com/53868474/223000728-8fc61d7e-8138-4dc9-90b8-f98ab8def071.jpg)
+![screencapture-localhost-3000-game-161212-2023-03-05-01_17_48](https://user-images.githubusercontent.com/53868474/223000663-cef95ff4-8303-43e5-b1b2-0d6216a148d4.png)
 
-![Uploading screencapture-localhost-3000-game-894577-2023-03-05-00_55_32.png…]()
-
-![Uploading screencapture-localhost-3000-game-15272-2023-03-05-00_56_35.png…]()
-
-![Uploading screencapture-localhost-3000-game-494384-2023-03-05-01_17_10.png…]()
-
-![screencapture-localhost-3000-game-161212-2023-03-05-01_17_48](https://user-images.githubusercontent.com/53868474/222999819-b4b0a8b9-5317-4817-999f-1231adec9ab6.png)
 #### Tablet
-![Uploading screencapture-localhost-3000-game-42857-2023-03-05-01_36_10.png…]()
+![screencapture-localhost-3000-game-42857-2023-03-05-01_36_10](https://user-images.githubusercontent.com/53868474/223000804-7ec168ac-114b-48b7-88b9-7355571f9cba.jpg)
 
 #### Mobile
-<img width="390" alt="Screenshot 2022-09-18 at 22 28 38" src="https://user-images.githubusercontent.com/53868474/190927029-b6857afd-c74d-4068-839e-032cec1398b6.png">
+![screencapture-localhost-3000-2023-03-05-01_20_48](https://user-images.githubusercontent.com/53868474/223001218-ab63f4b9-1824-445d-b4d9-262d568b86f2.png)
+![screencapture-localhost-3000-game-799265-2023-03-05-01_32_48](https://user-images.githubusercontent.com/53868474/223000943-e4bf4679-ed3f-4719-a769-e03c890a47e9.png)
