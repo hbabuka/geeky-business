@@ -373,5 +373,5 @@ The app is made fully responsive for all screens and devices. It can be tested i
 ![screencapture-localhost-3000-game-42857-2023-03-05-01_36_10](https://user-images.githubusercontent.com/53868474/223000804-7ec168ac-114b-48b7-88b9-7355571f9cba.jpg)
 
 #### Mobile
-![screencapture-localhost-3000-2023-03-05-01_20_48](https://user-images.githubusercontent.com/53868474/223001218-ab63f4b9-1824-445d-b4d9-262d568b86f2.png)
-![screencapture-localhost-3000-game-799265-2023-03-05-01_32_48](https://user-images.githubusercontent.com/53868474/223000943-e4bf4679-ed3f-4719-a769-e03c890a47e9.png)
+![screencapture-localhost-3000-2023-03-05-01_20_48](https://user-images.githubusercontent.com/53868474/223001218-ab63f4b9-1824-445d-b4d9-262d568b86f2.png)![screencapture-localhost-3000-game-799265-2023-03-05-01_32_48](https://user-images.githubusercontent.com/53868474/223000943-e4bf4679-ed3f-4719-a769-e03c890a47e9.png)
+
