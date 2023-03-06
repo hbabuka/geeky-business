@@ -360,14 +360,21 @@ Within the `@layer components` directive I put custom CSS classes that I reuse t
 
 ## Testing
 #### Cross platform experience
-The app can be tested in the browser using a full window view and resizing the browser (for now only scroll is implemented as a response to responsive design for devices other than laptops and mobile phones). Additionally, using the [Toggle Device Toolbar](https://developer.chrome.com/docs/devtools/device-mode/#viewport), a mobile viewport can be simulated to see how the layout looks on mobile devices.
+The app is made fully responsive for all screens and devices. It can be tested in the browser using a full window view and resizing the browser. Additionally, using the [Toggle Device Toolbar](https://developer.chrome.com/docs/devtools/device-mode/#viewport), a mobile viewport can be simulated to see how the layout looks on mobile devices.
 
 ## App screenshots
 #### Desktop
-<img width="1680" alt="Screenshot 2022-09-18 at 22 28 11" src="https://user-images.githubusercontent.com/53868474/190927024-b2aeb49b-6492-47f4-aa2a-7470ce42c1f0.png">
+![Uploading screencapture-geeky-business-netlify-app-2023-03-06-02_26_13.png…]()
 
+![Uploading screencapture-localhost-3000-game-894577-2023-03-05-00_55_32.png…]()
+
+![Uploading screencapture-localhost-3000-game-15272-2023-03-05-00_56_35.png…]()
+
+![Uploading screencapture-localhost-3000-game-494384-2023-03-05-01_17_10.png…]()
+
+![screencapture-localhost-3000-game-161212-2023-03-05-01_17_48](https://user-images.githubusercontent.com/53868474/222999819-b4b0a8b9-5317-4817-999f-1231adec9ab6.png)
 #### Tablet
-<img width="390" alt="Screenshot 2022-09-18 at 22 28 38" src="https://user-images.githubusercontent.com/53868474/190927029-b6857afd-c74d-4068-839e-032cec1398b6.png">
+![Uploading screencapture-localhost-3000-game-42857-2023-03-05-01_36_10.png…]()
 
 #### Mobile
 <img width="390" alt="Screenshot 2022-09-18 at 22 28 38" src="https://user-images.githubusercontent.com/53868474/190927029-b6857afd-c74d-4068-839e-032cec1398b6.png">
