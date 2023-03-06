@@ -1,8 +1,10 @@
 # Geeky Business
-Front-end development and UX design
+Geeky Business is a personal web project that covers front-end development and UX design of an online gaming platform.
 
 ## Introduction
-This is a UI design + development project, to present a [single-elimination bracket](https://en.wikipedia.org/wiki/Single-elimination_tournament) tournament from a given data set, using tools and technologies of my choice.
+Welcome to *Geeky Business*, a personal project that aims to explore new technologies while creating a comprehensive gaming database. As a developer and designer, I wanted to create a platform that combined my passion for both fields. With Geeky Business, I set out to create a simple and modern looking website while also experimenting with some technologies that were unfamiliar to me.
+
+One of the technologies that I used in building Geeky Business is Tailwind, a utility-first CSS framework, to create a responsive and visually appealing user interface. As a CSS specialist, I specifically wanted to try out Tailwind and see how it compares to other CSS frameworks and CSS-in-JS libraries in terms of styling setup, reusability and sustainability. Additionally, I used Redux, a predictable state container for JavaScript apps. By incorporating Redux into the platform, I was able to create a more efficient and scalable data management system for the data I fetch from an existing video games database API.
 
 ## Project links
 * [**Code repository**](https://github.com/hbabuka/geeky-business) on Github.
@@ -15,15 +17,6 @@ This is a UI design + development project, to present a [single-elimination brac
 </details>
 
 ## Implementation details
-### Technologies
-The following technologies are used for the implementation of the project:
-* [React 18.2.0](https://reactjs.org/)
-* [Typescript 4.9.5](https://www.typescriptlang.org/)
-* [Tailwind CSS 3.2.4](https://tailwindcss.com/)
-* [Redux 4.2.0](https://redux.js.org/)
-* [Axios 1.2.2](https://axios-http.com/)
-* [Jest 29.4.3](https://jestjs.io/)
-
 ### Setup
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -61,12 +54,23 @@ $ npm start
 ```
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Folders and files structure
-All components are placed in a separate folder `components` and then they are also hierarchically structured inside this folder. Every component has its own `.tsx` file which contains the `HTML` and the `JS` code and a separate `.scss` file where all styles related to this component are written. These are implemented as `Sass Partials` and contain little snippets of SCSS that I include in the main `styles.scss` file. This way I modularize my CSS and help keep things easier to maintain. Moreover, I keep a separate `SCSS` file where I keep all my styling variables, mixins and media queries organized and I import it whenever I need them. In the `utils.ts` file I keep some utility functions that I thought may be reused later in the project or I thought they should be extracted separately. The project structure looks as follows:
+### Technologies
+The following technologies are used for the implementation of the project:
+* [React 18.2.0](https://reactjs.org/) as a JavaScript library to build the user interface.
+* [Typescript 4.9.5](https://www.typescriptlang.org/) to add syntax for types and type-checking.
+* [Tailwind CSS 3.2.4](https://tailwindcss.com/) as a CSS framework to style the components.
+* [Redux 4.2.0](https://redux.js.org/) as a global state management library for React.
+* [Axios 1.2.2](https://axios-http.com/) as a HTTP client to fect data from the API endpoint.
+* [Jest 29.4.3](https://jestjs.io/) as a JavaScript testing framework for unit testing of util functions.
+
+### API
+To obtain the gaming database for Geeky Business, I used the API provided by [RAWG](https://rawg.io/apidocs). This API grants access to a comprehensive database of video games, allowing me to incorporate game reviews, ratings, and other important information into the platform. Here is a link to the [documentation](https://api.rawg.io/docs/).
+
+### Project structure
 ```
 .
 └── root
-    ├── *public*
+    ├── public
     ├── src
     │   ├── @types
     │   │   └── assets
@@ -125,46 +129,89 @@ All components are placed in a separate folder `components` and then they are al
     └── tsconfig.json
 ```
 
-## Design description
+## Design setup
 ### UX concept
-The design decisions for this project are, of course, centered around the single-elimination bracket and the way the teams, matches and scores are presented. There was no other way than to go with simplistic approach, where I chose a horizontal bracket model for web screens and vertical model for smaller screens i.e. mobile devices. This was only logical given their proportional similarities.
+The design is centered around a responsive grid of cards that form each section of the body. A top global navigation menu is present throughout the whole application. This navbar is also fully responsive and it works for smaller devices.
 
-Even though this is a very simple task, I took the Atomic [Design approach](https://bradfrost.com/blog/post/atomic-web-design/) to create a small design system for the project. Working this way, always helps me organize my design and development environment in the best possible way, but it also opens a lot of space for the project to grow organically into a scallable project. Therefore, I started with the smallest - the atoms - represented by the team information, such as id, name, picture etc. With those I built the `Team` component as a molecule that turned out to be the base building block in my application. Combining two teams, I created the `Match` component as an organism that will finally be a part of the `Round` component. The latest serves as a template for me to build the whole user interface.
-
-I would point out the following design decisions I made for this task:
-* Style wise, I went with a full linear and flat design, which I thought was more suitable for the domain.
-* I primarily chose to implement the design in a dark theme because that way it looks more like it is part of a game or an entertainment app.
-* I chose a simple representation of the teams and matches, where there the winner of each match is subtly highlighted. This will enhance the user experience in reading the information more easily.
-* I added a highlight for the champion of the tournament as well, where the user can immediately recognize who the overall winner is and what was his path to the throne like.
+### Features
+There are two main pages in this application: the `Home Page` and the `Game Details Page`.
+The homepage consists of main sections and top sections which are highlighted in the UI:
+* Popular games - showing the best rated video games in the past 365 days.
+* Upcoming games - showing the video games that are going to be added in the following year.
+* Latest games - showing the newest video games according to their release date.
+* Top Indie games - a preview of the top rated indie games of all times.
+* Top Multiplayer games - showing the best multiplayer games of all time.
+* Searched games - allows searching through the database and filter results by game name.
+The game details page covers the following information for a video game:
+* Title
+* Release date
+* Rating and number of ratings
+* Genres
+* Description
+* Availability on gaming platforms
+* Trailer preview
+* Website link
+* Publishers
+* Screenshots
 
 ### Figma
-The designs are completely made using Figma. I created a mini design system with style guide and component set. You can find the following pages inside the Figma file:
-#### Style guide
-Mainly focused on typography and color palette for both dark and light theme.
-![Style Guide bracket](https://user-images.githubusercontent.com/53868474/190924039-3c7ed5c0-5173-45d8-972b-a7d09826054a.png)
-#### Components
-Designed the same way as they are later implemented. All components contain both light and dark variant, but I decided to implement the dark theme so far. In design and implementation, I used the following components:
-* Team
-* Match
-* Bracket lines
-* Round
-#### Design and layout analyses
-Includes an analysis of the layout and how it can be implemented, taking into consideration a model with more teams and rounds. Also, I added the initial sketches I did during the concept phase of the project.
-![bracket sketch](https://user-images.githubusercontent.com/53868474/190924141-e6969eab-c818-4d60-8ab4-18ce0b3a5e55.jpg)
-#### Screen designs
-Contains the screen designs for both web and mobile. There are designs for dark and light theme. For the mobile designs there is also an additional consideration of how the UX can be improved by using tabs as horizontal navigation through the rounds.
+The designs are completely made using Figma. I created a mini design system with style guide and component set. You can find the following pages inside the Figma file: https://www.figma.com/file/o7MZ1Jl0SH47wAOfhjVJzS/Geeky-Business?node-id=3%3A3&t=KWHsCrYocX4mR5ul-1.
 
+### Style guide
+The style guide is completely based on the Tailwind CSS theme. 
+#### Colors
+The project colors are inherited from the default color palette which is used out-of-the-box and then adapted to my local theme.
+![Palette](https://user-images.githubusercontent.com/53868474/222995694-83775562-aa6a-4759-9d62-536c36cedd2a.png)
+#### Typograpgy
+The typography system is based on the Tailwind text utility classes.
+![Typography](https://user-images.githubusercontent.com/53868474/222995689-ce074caa-84dc-4d66-835c-23351468042d.png)
+#### Spacing
+The spacing scale for margins, padding, and fixed element heights is completely applied throughout the designs: https://tailwindcss.com/docs/customizing-spacing.
+#### Shadows
+To gain elevation, I use the following Tailwind CSS shadows:
+![Shadows](https://user-images.githubusercontent.com/53868474/222995671-ba3e0ca8-d240-46ea-91ba-6e8b30b31035.png)
 
+### Components
+All components are designed the same way as they are later implemented. In the design files, there are the following component sets:
+![Forms](https://user-images.githubusercontent.com/53868474/222995802-3564f18e-518b-459b-9e70-69b65e89b01f.png)
+![Navigation](https://user-images.githubusercontent.com/53868474/222995808-3a42286f-a346-4cc5-a1ae-d4bbf19e54d1.png)
+![Cards](https://user-images.githubusercontent.com/53868474/222995816-76b324cc-5cb7-4070-9f8f-ab8eb368bfce.png)
+![Presentation](https://user-images.githubusercontent.com/53868474/222995830-954ea889-9ba4-4374-afbe-c845d10ee15e.png)
+
+## Tailwind CSS setup
+Besides heavily using the recommended default utility classes for this CSS framework, I decided to rely on two other things in order to make the styling code more reusable and more sustainable. First, I did a theme configuration and I customized the Tailwind CSS default theme to my project needs. This was according to the previous design decision, and done inside `theme` section of my `tailwind.config.js` file:
+```
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    fontFamily: {
+      sans: ["Inter", "system-ui", "sans-serif"],
+      display: ["Inter", "system-ui", "sans-serif"],
+      body: ["Inter", "system-ui", "sans-serif"],
+    },
+    colors: {
+      ...colors,
+      primary: colors.indigo,
+      secondary: colors.slate,
+      success: colors.emerald,
+      warning: colors.yellow,
+    },
+    extend: {},
+  },
+  plugins: [require("@tailwindcss/forms")],
+};
+```
 
 ## Testing
-#### Configurable data
-The bracket is implemented in a dynamic way, meaning changing the data will also cause changes to the content of the bracket. Therefore, at the moment it is possible to change the data model in the `bracket-data.ts` file and the rendering will change accordingly. For example, you can ***change the scores in the individual matches and the winner of the match will be highlighted accordingly***. Moreover, the new champion will be styled differently. Also, whole new rounds can be added (of course following the rules of the single-elimination tournament). In these cases only some styling adaptation will be needed to center the bracket lines (I didn't take the time to do this, still).
 #### Cross platform experience
 The app can be tested in the browser using a full window view and resizing the browser (for now only scroll is implemented as a response to responsive design for devices other than laptops and mobile phones). Additionally, using the [Toggle Device Toolbar](https://developer.chrome.com/docs/devtools/device-mode/#viewport), a mobile viewport can be simulated to see how the layout looks on mobile devices.
 
 ## App screenshots
-#### Web
+#### Desktop
 <img width="1680" alt="Screenshot 2022-09-18 at 22 28 11" src="https://user-images.githubusercontent.com/53868474/190927024-b2aeb49b-6492-47f4-aa2a-7470ce42c1f0.png">
+
+#### Tablet
+<img width="390" alt="Screenshot 2022-09-18 at 22 28 38" src="https://user-images.githubusercontent.com/53868474/190927029-b6857afd-c74d-4068-839e-032cec1398b6.png">
 
 #### Mobile
 <img width="390" alt="Screenshot 2022-09-18 at 22 28 38" src="https://user-images.githubusercontent.com/53868474/190927029-b6857afd-c74d-4068-839e-032cec1398b6.png">
