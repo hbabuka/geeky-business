@@ -208,6 +208,155 @@ module.exports = {
   plugins: [require("@tailwindcss/forms")],
 };
 ```
+Second, in my `index.css` file I use `@tailwind` directives to insert Tailwind’s `base`, `components`, and `utilities` styles into my CSS. Within the `@layer base` directive I put some general styling for HTML elements, basic CSS reset rules, I customized my typography elements, such as the headings, paragraphs and button text styles, and added rules for the layout and grid styling.
+```
+@layer base {
+  /* General styling */
+
+  * {
+    @apply antialiased;
+  }
+
+  html {
+    @apply scroll-smooth h-full;
+  }
+
+  body {
+    @apply bg-secondary-50 text-secondary-900 h-full;
+  }
+
+  div#root,
+  div.App {
+    @apply h-screen;
+  }
+
+  /* Typography styles */
+
+  h1 {
+    @apply text-5xl leading-none font-semibold;
+  }
+
+  h2 {
+    @apply text-4xl leading-10 font-semibold;
+  }
+
+  h3 {
+    @apply text-3xl leading-9 font-semibold;
+  }
+
+  h4 {
+    @apply text-2xl leading-8 font-semibold;
+  }
+
+  h5 {
+    @apply text-xl leading-7 font-semibold;
+  }
+
+  @media not all and (min-width: 1024px) {
+    .h5-xs {
+      @apply text-lg leading-7 font-medium;
+    }
+  }
+
+  h6 {
+    @apply text-lg leading-7 font-medium;
+  }
+
+  p {
+    @apply text-base leading-6 font-normal;
+  }
+
+  button {
+    @apply text-base leading-6 font-medium tracking-wide;
+  }
+
+  /* Layout */
+
+  .layout-container {
+    @apply container mx-auto max-w-5xl px-5 md:px-8 xl:px-0;
+  }
+  
+  ...
+  
+}
+```
+Within the `@layer components` directive I put custom CSS classes that I reuse throughout the implementation:
+```
+@layer components {
+  /* Extended style guide */
+
+  .body2 {
+    @apply text-sm leading-5 font-normal;
+  }
+
+  .caption {
+    @apply text-xs leading-4 font-medium;
+  }
+
+  /* Components */
+
+  /* Buttons */
+
+  button {
+    @apply h-12 px-6 rounded-lg focus:ring-4 focus:ring-primary-300 focus:outline-none duration-300;
+  }
+
+  .btn-secondary-contained {
+    @apply bg-secondary-900 text-white hover:bg-secondary-700 disabled:bg-secondary-300;
+  }
+
+  .btn-secondary-outlined {
+    @apply border-secondary-500 border hover:bg-secondary-200 disabled:text-secondary-300 disabled:border-secondary-200 disabled:hover:bg-transparent;
+  }
+
+  .btn-primary-outlined {
+    @apply border-primary-400 border hover:bg-primary-100 text-primary-600 disabled:text-secondary-300 disabled:border-secondary-200 disabled:hover:bg-transparent;
+  }
+
+  .icon-btn {
+    @apply px-3;
+  }
+
+  /* Cards */
+
+  .card {
+    @apply bg-white rounded-[1.25rem] px-5 py-5 shadow flex flex-col duration-300 border border-white;
+  }
+
+  .card:hover h5 {
+    @apply text-primary-600 duration-300;
+  }
+
+  .card:hover img {
+    @apply scale-110 duration-700;
+  }
+
+  /* Chips */
+
+  .chip {
+    @apply rounded-full;
+  }
+
+  .chip-medium {
+    @apply px-3 h-8 text-sm leading-5 font-normal flex items-center;
+  }
+
+  .chip-small {
+    @apply px-2 py-1 text-xs leading-4 font-medium;
+  }
+
+  .chip-outlined {
+    @apply border;
+  }
+
+  /* Styling for screenshots gallery */
+
+  /* Specific classes */
+
+  /* Styling of clear button for search type input */
+
+}
+```
 
 ## Testing
 #### Cross platform experience
