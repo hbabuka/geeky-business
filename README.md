@@ -161,22 +161,26 @@ The designs are completely made using Figma. I created a mini design system with
 The style guide is completely based on the Tailwind CSS theme. 
 #### Colors
 The project colors are inherited from the default color palette which is used out-of-the-box and then adapted to my local theme.
-![Palette](https://user-images.githubusercontent.com/53868474/222995694-83775562-aa6a-4759-9d62-536c36cedd2a.png)
+[Palette](https://user-images.githubusercontent.com/53868474/222995694-83775562-aa6a-4759-9d62-536c36cedd2a.png)
 #### Typograpgy
 The typography system is based on the Tailwind text utility classes.
-![Typography](https://user-images.githubusercontent.com/53868474/222995689-ce074caa-84dc-4d66-835c-23351468042d.png)
+[Typography](https://user-images.githubusercontent.com/53868474/222995689-ce074caa-84dc-4d66-835c-23351468042d.png)
 #### Spacing
 The spacing scale for margins, padding, and fixed element heights is completely applied throughout the designs: https://tailwindcss.com/docs/customizing-spacing.
 #### Shadows
 To gain elevation, I use the following Tailwind CSS shadows:
-![Shadows](https://user-images.githubusercontent.com/53868474/222995671-ba3e0ca8-d240-46ea-91ba-6e8b30b31035.png)
+[Shadows](https://user-images.githubusercontent.com/53868474/222995671-ba3e0ca8-d240-46ea-91ba-6e8b30b31035.png)
 
 ### Components
 All components are designed the same way as they are later implemented. In the design files, there are the following component sets:
-![Forms](https://user-images.githubusercontent.com/53868474/222995802-3564f18e-518b-459b-9e70-69b65e89b01f.png)
-![Navigation](https://user-images.githubusercontent.com/53868474/222995808-3a42286f-a346-4cc5-a1ae-d4bbf19e54d1.png)
-![Cards](https://user-images.githubusercontent.com/53868474/222995816-76b324cc-5cb7-4070-9f8f-ab8eb368bfce.png)
-![Presentation](https://user-images.githubusercontent.com/53868474/222995830-954ea889-9ba4-4374-afbe-c845d10ee15e.png)
+**Forms**
+[Forms](https://user-images.githubusercontent.com/53868474/222996914-1c2c36ff-72a7-427f-a9b1-5b4e8b77a22c.png)
+**Navigation**
+[Navigation](https://user-images.githubusercontent.com/53868474/222996923-a52e40b9-8018-4554-8a59-80e9c24f3bd9.png)
+**Cards**
+[Cards](https://user-images.githubusercontent.com/53868474/222996928-38926668-95f0-481f-96b5-2291b1f7d2df.png)
+**Presentation**
+[Presentation](https://user-images.githubusercontent.com/53868474/222996946-d0faf6c5-cde8-40fe-a8e2-f8b1c135199e.png)
 
 ## Tailwind CSS setup
 Besides heavily using the recommended default utility classes for this CSS framework, I decided to rely on two other things in order to make the styling code more reusable and more sustainable. First, I did a theme configuration and I customized the Tailwind CSS default theme to my project needs. This was according to the previous design decision, and done inside `theme` section of my `tailwind.config.js` file:
